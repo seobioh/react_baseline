@@ -1,0 +1,9 @@
+.space {
+    height: 8px;
+}
+
+@media (min-width: 768px) {
+    .space {
+        height: 8px;
+    }
+}

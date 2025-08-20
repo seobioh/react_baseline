@@ -1,0 +1,46 @@
+.main-title {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin: 6px 0;
+    box-sizing: border-box;
+
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 600;
+    color: #000000;
+}
+
+.sub-title {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin: 6px 0;
+    box-sizing: border-box;
+
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+    color: #848484;
+
+}
+
+@media (min-width: 768px) {
+    .main-title {
+        justify-content: center;
+
+        margin: 12px 0;
+
+        font-size: 48px;
+    }
+
+    .sub-title {
+        justify-content: center;
+
+        margin: 12px 0;
+
+        font-size: 18px;
+    }
+}

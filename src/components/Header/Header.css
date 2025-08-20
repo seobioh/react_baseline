@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 56px;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.logo-container{
+    display: flex;
+
+    height: 24px;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .logo-container {
+        height: 24px;
+    }
+}

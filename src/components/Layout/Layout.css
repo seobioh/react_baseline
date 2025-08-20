@@ -1,0 +1,16 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+
+}
