@@ -15,8 +15,10 @@ const AccountInfo : React.FC = () => {
     useEffect(() => {
         if (!token) {
             navigate('/accounts/login');
+        } else {
+            getAccountInfo();
         }
-    }, [token, navigate]);
+    }, [token, navigate, getAccountInfo]);
     
     const pointTransactionBox = () => {
         navigate('/users/point-transactions');

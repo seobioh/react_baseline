@@ -21,7 +21,6 @@ const AccountEdit : React.FC = () => {
         if (user) {
             const birthday = user.birthday || '';
             const [year, month, day] = birthday ? birthday.split('-') : ['', '', ''];
-            
             const userData = {
                 name: user.name || '',
                 mobile: user.mobile || '',
@@ -30,7 +29,6 @@ const AccountEdit : React.FC = () => {
                 birthDay: day || '',
                 gender: user.gender || ''
             };
-            
             setFormData(userData);
             setOriginalData(userData);
         }
@@ -46,18 +44,15 @@ const AccountEdit : React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsLoading(true);
-        
+        setIsLoading(true);     
         try {
-            // 생년월일을 하나의 문자열로 합치기
             const birthday = `${formData.birthYear}-${formData.birthMonth.padStart(2, '0')}-${formData.birthDay.padStart(2, '0')}`;
             const submitData = {
                 name: formData.name,
-                mobile: formData.mobile,
+                mobile: formData.mobile.replace(/-/g, ''),
                 birthday: birthday,
                 gender: formData.gender
             };
-            
             await updateAccount(submitData);
             alert('계정 정보가 성공적으로 수정되었습니다.');
             navigate('/accounts');
@@ -112,7 +107,7 @@ const AccountEdit : React.FC = () => {
                     <input
                         type="text"
                         name="name"
-                        placeholder="이름을 입력하세요"
+                        placeholder="이름"
                         value={formData.name}
                         onChange={handleInputChange}
                     />
@@ -122,7 +117,7 @@ const AccountEdit : React.FC = () => {
                     <input
                         type="text"
                         name="mobile"
-                        placeholder="010-1234-5678"
+                        placeholder="전화번호"
                         value={formData.mobile}
                         onChange={handleInputChange}
                     />
