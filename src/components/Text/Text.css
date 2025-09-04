@@ -6,10 +6,10 @@
     margin: 6px 0;
     box-sizing: border-box;
 
+    color: #000000;
     font-size: 24px;
     line-height: 1;
     font-weight: 600;
-    color: #000000;
 }
 
 .sub-title {
@@ -20,10 +20,10 @@
     margin: 6px 0;
     box-sizing: border-box;
 
+    color: #848484;
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
-    color: #848484;
 }
 
 @media (min-width: 768px) {

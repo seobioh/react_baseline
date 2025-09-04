@@ -20,15 +20,17 @@
 .nav-link {
     display: flex;
     flex-direction: row;
+
     gap: 1rem;
 }
 
 .nav-item {
+    transition: color 0.2s ease;
+    cursor: pointer;
+
     font-size: inherit;
     color: #848484;
     text-decoration: none;
-    transition: color 0.2s ease;
-    cursor: pointer;
 }
 
 .nav-item.selected {
