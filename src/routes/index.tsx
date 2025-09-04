@@ -10,6 +10,8 @@ import AccountPage from '../pages/Accounts/AccountPage';
 import LoginPage from '../pages/Accounts/LoginPage';
 import SignupPage from '../pages/Accounts/SignupPage';
 import KakaoPage from '../pages/Accounts/KakaoPage';
+import NaverPage from '../pages/Accounts/NaverPage';
+import GooglePage from '../pages/Accounts/GooglePage';
 import ResetPasswordPage from '../pages/Accounts/ResetPasswordPage';
 import ChangePasswordPage from '../pages/Accounts/ChangePasswordPage';
 import AccountEditPage from '../pages/Accounts/AccountEditPage';
@@ -98,6 +100,20 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <KakaoPage /> },
+        ],
+    },
+    {
+        path: '/accounts/naver',
+        element: <Layout />,
+        children: [
+            { index: true, element: <NaverPage /> },
+        ],
+    },
+    {
+        path: '/accounts/google',
+        element: <Layout />,
+        children: [
+            { index: true, element: <GooglePage /> },
         ],
     },
     {
