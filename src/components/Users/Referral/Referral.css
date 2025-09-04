@@ -93,7 +93,9 @@
     box-sizing: border-box;
     border: none;
     border-radius: 8px;
+    background-color: #000;
 
+    color: #fff;
     font-size: 14px;
     line-height: 1;
     font-weight: 600;
