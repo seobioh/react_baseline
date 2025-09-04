@@ -30,7 +30,7 @@ const NaverPage: React.FC = () => {
     }, [searchParams, naverLogin, navigate]);
 
     return (
-        <div>
+        <div style={{width: '100%'}}>
             <SpaceMedium />
             <MainTitle> 네이버 로그인 </MainTitle>
             <SubTitle> 네이버 로그인 진행 중 </SubTitle> 

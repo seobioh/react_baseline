@@ -2,6 +2,9 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import Layout from '../components/Layout';
 import PrivacyPage from '../pages/Abouts/PrivacyPage';
 import TermPage from '../pages/Abouts/TermPage';
+import HomePage from '../pages/Home/HomePage';
+import EventsPage from '../pages/Events/EventPage';
+import FAQPage from '../pages/FAQs/FAQPage';
 import AboutPage from '../pages/Abouts/AboutPage';
 import AccountPage from '../pages/Accounts/AccountPage';
 import LoginPage from '../pages/Accounts/LoginPage';
@@ -18,7 +21,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Layout />,
     children: [
-        { index: true, element: <Navigate to="/about" replace /> },
+        { index: true, element: <Navigate to="/home" replace /> },
       ],
     },
     {
@@ -36,10 +39,10 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: '/about',
+        path: '/home',
         element: <Layout />,
         children: [
-            { index: true, element: <AboutPage /> },
+            { index: true, element: <HomePage /> },
         ],
     },
     {
@@ -49,15 +52,24 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: '/menu2',
+        path: '/events',
         element: <Layout />,
         children: [
+            { index: true, element: <EventsPage /> },
         ],
     },
     {
-        path: '/menu3',
+        path: '/faqs',
         element: <Layout />,
         children: [
+            { index: true, element: <FAQPage /> },
+        ],
+    },
+    {
+        path: '/about',
+        element: <Layout />,
+        children: [
+            { index: true, element: <AboutPage /> },
         ],
     },
     {

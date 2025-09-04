@@ -3,10 +3,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const menuItems = [
-  { id: 0, href: "/about", label: "서비스 소개" },
-  { id: 1, href: "/menu1", label: "메뉴1" },
-  { id: 2, href: "/menu2", label: "메뉴2" },
-  { id: 3, href: "/menu3", label: "메뉴3" },
+  { id: 0, href: "/menu1", label: "메뉴1" },
+  { id: 1, href: "/events", label: "이벤트" },
+  { id: 2, href: "/faqs", label: "FAQ" },
+  { id: 3, href: "/about", label: "소개" },
   { id: 4, href: "/accounts", label: "계정" },
 ];
 
