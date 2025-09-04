@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-const BASE_URL = 'drf-baseline-server-url';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 interface User {
   id: number;

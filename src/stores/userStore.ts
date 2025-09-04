@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-const BASE_URL = 'drf-baseline-server-url';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 interface Referral {
   referrer: number;
