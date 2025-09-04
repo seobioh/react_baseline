@@ -49,9 +49,10 @@
 }
 
 .footer-logo-container .logo {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: contain;
+    object-position: left;
 }
 
 .footer-spacer {
