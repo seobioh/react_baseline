@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
-                <div className="logo-container">
+                <div className="footer-logo-container">
                     <img src={logoImage} alt="VAHANA Logo" className="logo" />
                 </div>
 
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
                 <div className="footer-links">
                     <nav>
-                        <a href="/privacy">개인정보처리방침</a>
+                        <a href="/privacys">개인정보처리방침</a>
                         <a href="/terms">이용약관</a>
                     </nav>
                 </div>

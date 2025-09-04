@@ -21,7 +21,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ currentPath, onNavigate }) => (
       <Link
         key={item.id}
         to={item.href}
-        className={currentPath === item.href ? "nav-item selected" : "nav-item"}
+        className={currentPath.startsWith(item.href) ? "nav-item selected" : "nav-item"}
         onClick={() => onNavigate(item.href)}
       >
         {item.label}

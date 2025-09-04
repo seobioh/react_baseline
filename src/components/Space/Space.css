@@ -1,9 +1,49 @@
-.space {
+.space-8px {
     height: 8px;
 }
 
+.space-small {
+    height: 4px;
+}
+
+.space-medium {
+    height: 12px;
+}
+
+.space-large {
+    height: 16px;
+}
+
+.space-x-large {
+    height: 24px;
+}
+
+.space-xx-large {
+    height: 32px;
+}
+
 @media (min-width: 768px) {
-    .space {
+    .space-8px {
         height: 8px;
+    }
+
+    .space-small {
+        height: 8px;
+    }
+
+    .space-medium {
+        height: 24px;
+    }
+
+    .space-large {
+        height: 32px;
+    }
+
+    .space-x-large {
+        height: 48px;
+    }
+
+    .space-xx-large {
+        height: 64px;
     }
 }

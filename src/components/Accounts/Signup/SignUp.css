@@ -1,0 +1,275 @@
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    border: 0.2px solid #c2c2c2;
+    border-radius: 10px;
+}
+
+.sign-up-space {
+    height: 16px;
+}
+
+.sign-up-space-small {
+    height: 4px;
+}
+
+.sign-up-progress-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 48px;
+    padding: 4px 4px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.sign-up-progress-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sign-up-progress-step.active {
+    background-color: #8cff20;
+
+    color: #000;
+}
+
+.sign-up-progress-step.inactive {
+    background-color: #f9f9f9;
+
+    color: #000;
+}
+
+.sign-up-container h3 {
+    margin: 0;
+
+    color: #000;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.sign-up-container p {
+    margin: 0;
+
+    color: #848484;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.sign-up-container input {
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 0.2px solid #c2c2c2;
+    border-radius: 8px;
+    background-color: transparent;
+    outline: none;
+
+    color: #000;
+    font-size: 16px;
+}
+
+.sign-up-input-valid {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+
+    color: #666;
+}
+
+.sign-up-input:-webkit-autofill,
+.sign-up-input:-webkit-autofill:hover,
+.sign-up-input:-webkit-autofill:focus,
+.sign-up-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+    background-color: white !important;
+}
+
+.sign-up-container button {
+    width: 100%;
+    height: 48px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.sign-up-button.invalid {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+
+    color: #fff;
+}
+
+.sign-up-button.valid {
+    background-color: #000;
+    color: #fff;
+}
+
+.sign-up-button.valid:hover:not(:disabled) {
+    background-color: #333;
+}
+
+.sign-up-button:disabled {
+    background-color: #c2c2c2;
+    cursor: not-allowed;
+}
+
+.sign-up-agreement {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+}
+
+.sign-up-agreement-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    margin: 4px 0;
+}
+
+.sign-up-agreement-checkbox {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    cursor: pointer;
+}
+
+.sign-up-agreement-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.sign-up-agreement-checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c2c2c2;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.sign-up-agreement-checkbox input[type="checkbox"]:checked + .sign-up-agreement-checkmark {
+    border-color: #000;
+    background-color: #000;
+}
+
+.sign-up-agreement-checkbox input[type="checkbox"]:checked + .sign-up-agreement-checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sign-up-agreement-text {
+    flex: 1;
+
+    color: #000;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.sign-up-agreement-required {
+    color: #ff4444;
+    font-weight: 600;
+}
+
+.sign-up-agreement-optional {
+    color: #666;
+    font-weight: 400;
+}
+
+@media (min-width: 768px) {
+    .sign-up-container {
+        max-width: 480px;
+        padding: 16px 16px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .sign-up-space {
+        height: 16px;
+    }
+
+    .sign-up-space-small {
+        height: 8px;
+    }
+
+    .sign-up-progress-container {
+        margin: 8px 0;
+    }
+
+    .sign-up-container h3 {
+        font-size: 16px;
+    }
+
+    .sign-up-container p {
+        font-size: 12px;
+    }
+
+    .sign-up-container input {
+        height: 60px;
+        margin: 8px 0;
+    }
+
+    .sign-up-container button {
+        height: 60px;
+        margin: 8px 0;
+
+        font-size: 16px;
+    }
+}

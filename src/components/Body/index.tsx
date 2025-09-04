@@ -6,9 +6,9 @@ interface BodyProps {
     className?: string;
 }
 
-const Body: React.FC<BodyProps> = ({ children, className = '' }) => {
+const Body: React.FC<BodyProps> = ({children}) => {
     return (
-        <main className={`body ${className}`.trim()}>
+        <main className="body">
             <div className="body-container">
                 {children}
             </div>

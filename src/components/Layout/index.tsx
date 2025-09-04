@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header";
 import Navbar from "../Navbar";
-import Space from "../Space";
+import { Space8px } from "../Space";
 import Divider from "../Divider";
 import Body from "../Body";
 import Footer from "../Footer";
@@ -13,7 +13,7 @@ function Layout() {
       <div className="layout-container">
         <Header />
         <Navbar />
-        <Space />
+        <Space8px />
         <Divider />
         <Body>
           <Outlet />

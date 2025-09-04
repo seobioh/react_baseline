@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .header-container {
@@ -10,24 +10,35 @@
     align-items: center;
 
     width: 100%;
-    height: 56px;
-    padding: 0 8px;
+    height: 48px;
+    padding: 0 12px;
     box-sizing: border-box;
 }
 
-.logo-container{
+.header-logo-container{
     display: flex;
-
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 128px;
     height: 24px;
+}
+
+.header-logo-container .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 @media (min-width: 768px) {
     .header-container {
+        height: 60px;
         max-width: 1280px;
         margin: 0 auto;
     }
 
-    .logo-container {
+    .header-logo-container {
+        width: 144px;
         height: 24px;
     }
 }
