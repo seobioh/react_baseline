@@ -2,8 +2,12 @@
     height: 8px;
 }
 
-.space-small {
+.space-x-small {
     height: 4px;
+}
+
+.space-small {
+    height: 8px;
 }
 
 .space-medium {
@@ -22,13 +26,21 @@
     height: 32px;
 }
 
+.space-xxx-large {
+    height: 40px;
+}
+
 @media (min-width: 768px) {
     .space-8px {
         height: 8px;
     }
 
-    .space-small {
+    .space-x-small {
         height: 8px;
+    }
+
+    .space-small {
+        height: 16px;
     }
 
     .space-medium {
@@ -45,5 +57,9 @@
 
     .space-xx-large {
         height: 64px;
+    }
+
+    .space-xxx-large {
+        height: 80px;
     }
 }

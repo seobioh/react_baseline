@@ -47,7 +47,6 @@
     justify-content: flex-start;
     overflow: hidden;
 
-    width: 128px;
     height: 24px;
 }
 
@@ -78,7 +77,6 @@
     }
 
     .footer-logo-container {
-        width: 144px;
         height: 24px;
     }
 }

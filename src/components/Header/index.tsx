@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <div className="header">
             <div className="header-container">
                 <div className="header-logo-container" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-                    <img src={logoImage} alt="VAHANA Logo" className="logo" />
+                    <img src={logoImage} alt="React Baseline Logo" className="logo" />
                 </div>
                 <ToggleButton
                     options={tabOptions}

@@ -7,6 +7,12 @@ function Space8px() {
   );
 }
   
+function SpaceXSmall() {
+  return (
+    <div className="space-x-small">
+    </div>
+  );
+}
 
 function SpaceSmall() {
   return (
@@ -45,4 +51,11 @@ function SpaceXXLarge() {
   );
 }
 
-export { Space8px, SpaceSmall, SpaceMedium, SpaceLarge, SpaceXLarge, SpaceXXLarge };
+function SpaceXXXLarge() {
+  return (
+    <div className="space-xxx-large">
+    </div>
+  );
+}
+
+export { Space8px, SpaceXSmall, SpaceSmall, SpaceMedium, SpaceLarge, SpaceXLarge, SpaceXXLarge, SpaceXXXLarge };
