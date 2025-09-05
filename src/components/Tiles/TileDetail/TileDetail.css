@@ -98,28 +98,27 @@
 
 .tile-detail-container-sub-title {
     color: var(--tile-sub-title-color, #848484);
-
     font-size: 12px;
 }
 
 .tile-detail-container-title {
     color: var(--tile-title-color, #000);
-
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .tile-detail-container-price {
     color: var(--tile-price-color, #000);
-
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .tile-detail-top-section.right .hot {
     color: #FA4659;
+    font-size: 16px;
 }
 
 .tile-detail-top-section.right .new {
     color: #00de5a;
+    font-size: 16px;
 }
 
 .tile-detail-container img {
@@ -143,7 +142,7 @@
         font-size: 18px;
     }
 
-    .tile-detail-container .price {
+    .tile-detail-container-price {
         font-size: 18px;
     }
 
@@ -151,5 +150,13 @@
         padding: 16px 16px;
         
         font-size: 16px;
+    }
+
+    .tile-detail-top-section.right .hot {
+        font-size: 18px;
+    }
+    
+    .tile-detail-top-section.right .new {
+        font-size: 18px;
     }
 }

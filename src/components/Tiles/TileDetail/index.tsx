@@ -59,7 +59,7 @@ const TileDetail: React.FC<TileDetailProps> = ({
                     <img src={image} alt={title} />
                 </div>
                 <div className="tile-detail-bottom">
-                    <p className="price">{price}</p>
+                    <p className="tile-detail-container-price">{price}</p>
                 </div>
             </button>
         </div>

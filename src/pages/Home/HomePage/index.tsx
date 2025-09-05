@@ -40,9 +40,9 @@ const HomePage: React.FC = () => {
             <SpaceSmall />
             
             <div className="home-page-tile-button">
-                <Tile title="데일리카 구독" subTitle="일상 드라이빙" backgroundImage={sampleImage1} aspectRatioDesktop="1/1" onClick={() => navigate('/products')} backgroundColor="#18B37B" titleColor="#fff" />
-                <Tile title="스포츠카 구독" subTitle="스릴 넘치는 드라이빙" backgroundImage={sampleImage2} aspectRatioDesktop="1/1" onClick={() => navigate('/products')} backgroundColor="#0974F2" titleColor="#fff" />
-                <Tile title="업무용 차량 구독" subTitle="비즈니스 드라이빙" backgroundImage={sampleImage3} aspectRatioDesktop="2/1" onClick={() => navigate('/products')} backgroundColor="#FA4659" titleColor="#fff" />
+                <Tile title="데일리카 구독" subTitle="일상 생활용" backgroundImage={sampleImage1} aspectRatioDesktop="1/1" onClick={() => navigate('/products')} backgroundColor="#18B37B" titleColor="#fff" />
+                <Tile title="스포츠카 구독" subTitle="스릴 넘치는" backgroundImage={sampleImage2} aspectRatioDesktop="1/1" onClick={() => navigate('/products')} backgroundColor="#0974F2" titleColor="#fff" />
+                <Tile title="업무용 차량 구독" subTitle="비즈니스맨을 위한" backgroundImage={sampleImage3} aspectRatioDesktop="2/1" onClick={() => navigate('/products')} backgroundColor="#FA4659" titleColor="#fff" />
             </div>
             <SpaceXXXLarge />
 
