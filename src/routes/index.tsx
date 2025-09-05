@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from '../components/Layout';
 import PrivacyPage from '../pages/Abouts/PrivacyPage';
 import TermPage from '../pages/Abouts/TermPage';
@@ -20,11 +20,11 @@ import ReferralPage from '../pages/Users/ReferralPage';
 
 const router = createBrowserRouter([
     {
-    path: '/',
-    element: <Layout />,
-    children: [
-        { index: true, element: <Navigate to="/home" replace /> },
-      ],
+        path: '/',
+        element: <Layout />,
+        children: [
+            { index: true, element: <HomePage /> },
+        ],
     },
     {
         path: '/privacys',
@@ -38,13 +38,6 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <TermPage /> },
-        ],
-    },
-    {
-        path: '/home',
-        element: <Layout />,
-        children: [
-            { index: true, element: <HomePage /> },
         ],
     },
     {

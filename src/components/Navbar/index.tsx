@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const menuItems = [
-  { id: 0, href: "/about", label: "소개" },
-  { id: 1, href: "/products", label: "제품" },
-  { id: 2, href: "/events", label: "이벤트" },
-  { id: 3, href: "/faqs", label: "FAQ" },
-  { id: 4, href: "/accounts", label: "계정" },
+  { id: 0, href: "/", label: "·" },
+  { id: 1, href: "/about", label: "소개" },
+  { id: 2, href: "/products", label: "제품" },
+  { id: 3, href: "/events", label: "이벤트" },
+  { id: 4, href: "/faqs", label: "FAQ" },
+  { id: 5, href: "/accounts", label: "계정" },
 ];
 
 interface NavLinksProps {
