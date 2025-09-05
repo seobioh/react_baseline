@@ -179,7 +179,7 @@ const SignUp : React.FC = () => {
                         </label>
                     </div>
                     <div className="sign-up-agreement-container">
-                        <Link to="/privacys"><p>개인정보 수집 및 이용 동의 (필수) </p></Link>
+                        <Link to="/privacy"><p>개인정보 수집 및 이용 동의 (필수) </p></Link>
                         <label className="sign-up-agreement-checkbox">
                             <input
                                 type="checkbox"

@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
 
                 <div className="footer-links">
                     <nav>
-                        <a href="/privacys">개인정보처리방침</a>
+                        <a href="/privacy">개인정보처리방침</a>
                         <a href="/terms">이용약관</a>
                     </nav>
                 </div>
