@@ -24,6 +24,7 @@ interface Token {
   access_token: string;
   refresh_token: string;
   expires_in: number;
+  issued_at: number;
 }
 
 interface LoginRequest {
@@ -96,7 +97,7 @@ interface AccountState {
   verifyPassAuth: (identityCode: string) => Promise<void>;
   
   setLoading: (loading: boolean) => void;
-  checkTokenValidity: () => boolean;
+  checkTokenValidityandRefresh: () => Promise<boolean>;
 }
 
 export const useAccountStore = create<AccountState>()(
@@ -121,7 +122,10 @@ export const useAccountStore = create<AccountState>()(
           if (result.code === 0 && result.token) {
             set({
               user: result.user,
-              token: result.token,
+              token: {
+                ...result.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -191,7 +195,8 @@ export const useAccountStore = create<AccountState>()(
               token: {
                 ...token,
                 access_token: result.access_token,
-                expires_in: result.expires_in
+                expires_in: result.expires_in,
+                issued_at: Math.floor(Date.now() / 1000)
               }
             });
             return result.access_token;
@@ -514,12 +519,24 @@ export const useAccountStore = create<AccountState>()(
         set({ isLoading: loading });
       },
 
-      checkTokenValidity: () => {
-        const { token } = useAccountStore.getState();
-        if (!token?.access_token) return false;
+      checkTokenValidityandRefresh: async () => {
+        const { token, refreshToken, logout } = useAccountStore.getState();
+        if (!token?.access_token || !token?.expires_in) return false;
         
-        // 토큰 만료 시간 체크 (선택사항)
-        // 현재는 토큰 존재 여부만 확인
+        const now = Math.floor(Date.now() / 1000);
+        const issuedAt = token.issued_at || (now - 86400);
+        const tokenExpiry = issuedAt + token.expires_in;
+
+        if (now >= tokenExpiry - 3600) {
+          try {
+            await refreshToken();
+            return true;
+          } catch (error) {
+            logout();
+            return false;
+          }
+        }
+        
         return true;
       }
     }),
