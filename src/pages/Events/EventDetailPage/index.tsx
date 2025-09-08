@@ -85,7 +85,7 @@ const EventDetailPage: React.FC = () => {
             {event.link && (
                 <div className="event-detail-page-link">
                     {!isExpired ? (
-                        <button onClick={() => window.open(event.link, '_blank')}>
+                        <button onClick={() => window.open(event.link, '_self')}>
                             참여하기
                         </button>
                     ) : (
