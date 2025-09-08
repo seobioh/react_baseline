@@ -1,0 +1,54 @@
+.privacy-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.privacy-tile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin: 4px 0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.privacy-tile-title {
+    margin-bottom: 12px;
+
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.privacy-tile-detail {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+@media (min-width: 768px) {
+    .privacy-tile-container {
+        padding: 20px 24px;
+        margin: 8px 0;
+    }
+
+    .privacy-tile-title {
+        margin-bottom: 16px;
+
+        font-size: 16px;
+    }
+    
+    .privacy-tile-detail {
+        font-size: 14px;
+    }
+}

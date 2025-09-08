@@ -4,6 +4,7 @@ import PrivacyPage from '../pages/Abouts/PrivacyPage';
 import TermPage from '../pages/Abouts/TermPage';
 import HomePage from '../pages/Home/HomePage';
 import EventsPage from '../pages/Events/EventPage';
+import EventDetailPage from '../pages/Events/EventDetailPage';
 import FAQPage from '../pages/FAQs/FAQPage';
 import AboutPage from '../pages/Abouts/AboutPage';
 import AccountPage from '../pages/Accounts/AccountPage';
@@ -51,6 +52,13 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <EventsPage /> },
+        ],
+    },
+    {
+        path: '/events/:id',
+        element: <Layout />,
+        children: [
+            { index: true, element: <EventDetailPage /> },
         ],
     },
     {

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useServiceStore } from '../../../stores/serviceStore';
 import { MainTitle, SubTitle } from '../../../components/Text';
 import { SpaceMedium, SpaceSmall, SpaceXXXLarge } from '../../../components/Space';
 import AdTile from '../../../components/Tiles/AdTile';
@@ -8,35 +9,39 @@ import TileDetail from '../../../components/Tiles/TileDetail';
 import sampleImage1 from '../../../assets/images/light/sample_img_1.png';
 import sampleImage2 from '../../../assets/images/light/sample_img_2.png';
 import sampleImage3 from '../../../assets/images/light/sample_img_3.png';
-import adSampleDesktop from '../../../assets/images/light/ad_sample_desktop.png';
-import adSampleMobile from '../../../assets/images/light/ad_sample_mobile.png';
 import './HomePage.css';
 
 
 const HomePage: React.FC = () => {
     const navigate = useNavigate();
-    
+    const { ads, getAds, isLoading: adsLoading } = useServiceStore();
+
+    useEffect(() => {
+        getAds();
+    }, []);
+
     return (
         <div style={{ width: '100%' }} className="home-page">
-            <AdTile 
-                ads={[
-                    {
-                        imageDesktop: adSampleDesktop,
-                        imageMobile: adSampleMobile,
-                        onClick: () => navigate('/events')
-                    },
-                    {
-                        imageDesktop: adSampleDesktop,
-                        imageMobile: adSampleMobile,
-                        onClick: () => navigate('/events')
-                    },
-                    {
-                        imageDesktop: adSampleDesktop,
-                        imageMobile: adSampleMobile,
-                        onClick: () => navigate('/events')
-                    },
-                ]}
-            />
+            {adsLoading ? (
+                <div>로딩 중...</div>
+            ) : ads.filter(ad => ad.is_active).length > 0 ? (
+                <AdTile 
+                    ads={ads
+                        .filter(ad => ad.is_active)
+                        .map(ad => ({
+                            imageDesktop: ad.desktop_img || '',
+                            imageMobile: ad.mobile_img || '',
+                            onClick: () => {
+                                if (ad.link) {
+                                    window.location.href = ad.link;
+                                } else {
+                                }
+                            },
+                            isClickable: ad.link ? true : false
+                        }))
+                    }
+                />
+            ) : null}
             <SpaceSmall />
             
             <div className="home-page-tile-button">

@@ -194,7 +194,6 @@ const AdTile: React.FC<AdTileProps> = ({
                                         ad.onClick();
                                     }
                                 }}
-                                disabled={ad.isClickable === false}
                                 className={`ad-tile-button ${ad.isClickable === false ? 'disabled' : ''}`}
                             >
                                 <div className="ad-tile-content">

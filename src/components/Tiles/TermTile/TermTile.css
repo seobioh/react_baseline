@@ -1,0 +1,54 @@
+.term-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.term-tile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin: 4px 0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.term-tile-title {
+    margin-bottom: 12px;
+
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.term-tile-detail {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+@media (min-width: 768px) {
+    .term-tile-container {
+        padding: 20px 24px;
+        margin: 8px 0;
+    }
+
+    .term-tile-title {
+        margin-bottom: 16px;
+
+        font-size: 16px;
+    }
+    
+    .term-tile-detail {
+        font-size: 14px;
+    }
+}
