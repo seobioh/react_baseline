@@ -1,7 +1,7 @@
 import React from "react";
-import "./TileDetail.css";
+import "./DetailTile.css";
 
-interface TileDetailProps {
+interface DetailTileProps {
     subTitle: string;
     title: string;
     price: string;
@@ -17,7 +17,7 @@ interface TileDetailProps {
     className?: string;
 }
 
-const TileDetail: React.FC<TileDetailProps> = ({
+const DetailTile: React.FC<DetailTileProps> = ({
     title,
     subTitle,
     price,
@@ -34,36 +34,36 @@ const TileDetail: React.FC<TileDetailProps> = ({
 }) => {
     const containerStyle = {
         ...(backgroundColor && { backgroundColor }),
-        ...(subTitleColor && { '--tile-sub-title-color': subTitleColor }),
-        ...(titleColor && { '--tile-title-color': titleColor }),
-        ...(priceColor && { '--tile-price-color': priceColor })
+        ...(subTitleColor && { '--detail-tile-sub-title-color': subTitleColor }),
+        ...(titleColor && { '--detail-tile-title-color': titleColor }),
+        ...(priceColor && { '--detail-tile-price-color': priceColor })
     } as React.CSSProperties;
 
     return (
-        <div className={`tile-detail-container ${className}`} style={containerStyle}>
+        <div className={`detail-tile-container ${className}`} style={containerStyle}>
             <button 
                 onClick={isClickable ? onClick : undefined}
                 disabled={!isClickable}
                 className={!isClickable ? 'disabled' : ''}
             >
-                <div className="tile-detail-top">
-                    <div className="tile-detail-top-section">
-                        <p className="tile-detail-container-sub-title">{subTitle}</p>
-                        <p className="tile-detail-container-title">{title.length > 15 ? title.substring(0, 15) + '...' : title}</p>
+                <div className="detail-tile-top">
+                    <div className="detail-tile-top-section">
+                        <p className="detail-tile-container-sub-title">{subTitle}</p>
+                        <p className="detail-tile-container-title">{title.length > 15 ? title.substring(0, 15) + '...' : title}</p>
                     </div>
-                    <div className="tile-detail-top-section right">
+                    <div className="detail-tile-top-section right">
                         <p className={`${isHot ? 'hot' : isNew ? 'new' : ''}`}>{isHot ? 'HOT' : isNew ? 'NEW' : ''}</p>
                     </div>
                 </div>
-                <div className="tile-detail-middle">
+                <div className="detail-tile-middle">
                     <img src={image} alt={title} />
                 </div>
-                <div className="tile-detail-bottom">
-                    <p className="tile-detail-container-price">{price}</p>
+                <div className="detail-tile-bottom">
+                    <p className="detail-tile-container-price">{price}</p>
                 </div>
             </button>
         </div>
     );
 };
 
-export default TileDetail;
+export default DetailTile;

@@ -11,23 +11,23 @@
 }
 
 .space-medium {
-    height: 12px;
-}
-
-.space-large {
     height: 16px;
 }
 
-.space-x-large {
+.space-large {
     height: 24px;
 }
 
-.space-xx-large {
+.space-x-large {
     height: 32px;
 }
 
+.space-xx-large {
+    height: 48px;
+}
+
 .space-xxx-large {
-    height: 40px;
+    height: 64px;
 }
 
 @media (min-width: 768px) {

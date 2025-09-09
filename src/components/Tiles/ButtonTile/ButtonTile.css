@@ -1,4 +1,4 @@
-.tile-container {
+.button-tile-container {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -6,25 +6,25 @@
 
     flex: 1;
     width: 100%;
-    aspect-ratio: var(--tile-aspect-ratio, 2 / 3);
+    aspect-ratio: var(--button-tile-aspect-ratio, 2 / 3);
     box-sizing: border-box;
     border-radius: 8px;
     background-color: #f5f5f5;
-    background-image: var(--tile-bg-image);
-    background-position: var(--tile-bg-position, 100% 100%);
+    background-image: var(--button-tile-bg-image);
+    background-position: var(--button-tile-bg-position, 100% 100%);
     background-repeat: no-repeat;
-    background-size: var(--tile-bg-size, 100% 100%);
+    background-size: var(--button-tile-bg-size, 100% 100%);
     overflow: hidden;
     transition: filter 0.2s ease;
 }
 
 @media (hover: hover) {
-    .tile-container:hover {
+    .button-tile-container:hover {
         filter: brightness(0.8);
     }
 }
 
-.tile-container-top {
+.button-tile-container-top {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,17 +34,17 @@
     width: 100%;
 }
 
-.tile-container-sub-title {
-    color: var(--tile-sub-title-color, #e8e8e8);
+.button-tile-container-sub-title {
+    color: var(--button-tile-sub-title-color, #e8e8e8);
     font-size: 10px;
 }
 
-.tile-container-title {
-    color: var(--tile-title-color, #fff);
+.button-tile-container-title {
+    color: var(--button-tile-title-color, #fff);
     font-size: 15px;
 }
 
-.tile-container button{
+.button-tile-container button{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -54,45 +54,45 @@
     height: 100%;
     padding: 10px 8px;
 
-    color: var(--tile-text-color, #000);
+    color: var(--button-tile-text-color, #000);
     font-size: 12px;
     line-height: 1;
     font-weight: 600;
 }
 
-.tile-container:has(button.disabled) {
+.button-tile-container:has(button.disabled) {
     filter: brightness(0.95);
 }
 
-.tile-container button.disabled {
+.button-tile-container button.disabled {
     cursor: default;
 }
 
 @media (hover: hover) {
-    .tile-container:has(button.disabled):hover {
+    .button-tile-container:has(button.disabled):hover {
         filter: brightness(0.95);
     }
 }
 
 @media (min-width: 768px) { 
-    .tile-container {
-        aspect-ratio: var(--tile-aspect-ratio-desktop, 8/7);
-        --tile-bg-size: 80px 40px;
+    .button-tile-container {
+        aspect-ratio: var(--button-tile-aspect-ratio-desktop, 8/7);
+        --button-tile-bg-size: 80px 40px;
     }
     
-    .tile-container-top {
+    .button-tile-container-top {
         gap: 4px;
     }
     
-    .tile-container-sub-title {
+    .button-tile-container-sub-title {
         font-size: 12px;
     }
     
-    .tile-container-title {
+    .button-tile-container-title {
         font-size: 18px;
     }
     
-    .tile-container button{
+    .button-tile-container button{
         padding: 16px 16px;
 
         font-size: 16px;

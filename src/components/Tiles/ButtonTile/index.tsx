@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./Tile.css";
+import "./ButtonTile.css";
 
-interface TileProps {
+interface ButtonTileProps {
     subTitle: string;
     title: string;
     backgroundImage?: string;
@@ -15,7 +15,7 @@ interface TileProps {
     className?: string;
 }
 
-const Tile: React.FC<TileProps> = ({
+const ButtonTile: React.FC<ButtonTileProps> = ({
     subTitle,
     title,
     backgroundImage,
@@ -70,20 +70,20 @@ const Tile: React.FC<TileProps> = ({
     }, [backgroundImage, isDesktop]);
 
     const containerStyle = {
-        ...(backgroundImage && { '--tile-bg-image': `url(${backgroundImage})` }),
+        ...(backgroundImage && { '--button-tile-bg-image': `url(${backgroundImage})` }),
         ...(backgroundColor && { backgroundColor }),
-        ...(subTitleColor && { '--tile-sub-title-color': subTitleColor }),
-        ...(titleColor && { '--tile-title-color': titleColor }),
-        ...(aspectRatio && { '--tile-aspect-ratio': aspectRatio }),
-        ...(aspectRatioDesktop && { '--tile-aspect-ratio-desktop': aspectRatioDesktop }),
-        ...(backgroundImage && { '--tile-bg-size': bgSize }),
-        ...(backgroundImage && { '--tile-bg-position': bgPosition })
+        ...(subTitleColor && { '--button-tile-sub-title-color': subTitleColor }),
+        ...(titleColor && { '--button-tile-title-color': titleColor }),
+        ...(aspectRatio && { '--button-tile-aspect-ratio': aspectRatio }),
+        ...(aspectRatioDesktop && { '--button-tile-aspect-ratio-desktop': aspectRatioDesktop }),
+        ...(backgroundImage && { '--button-tile-bg-size': bgSize }),
+        ...(backgroundImage && { '--button-tile-bg-position': bgPosition })
     } as React.CSSProperties;
 
     return (
         <div 
             ref={containerRef}
-            className={`tile-container ${className}`}
+            className={`button-tile-container ${className}`}
             style={containerStyle}
         >
             <button 
@@ -91,13 +91,13 @@ const Tile: React.FC<TileProps> = ({
                 disabled={!isClickable}
                 className={!isClickable ? 'disabled' : ''}
             >
-                <div className="tile-container-top">
-                    <p className="tile-container-sub-title">{subTitle}</p>
-                    <p className="tile-container-title">{title.length > 15 ? title.substring(0, 15) + '...' : title}</p>
+                <div className="button-tile-container-top">
+                    <p className="button-tile-container-sub-title">{subTitle}</p>
+                    <p className="button-tile-container-title">{title.length > 15 ? title.substring(0, 15) + '...' : title}</p>
                 </div>
             </button>
         </div>
     );
 };
 
-export default Tile;
+export default ButtonTile;

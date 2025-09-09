@@ -1,0 +1,156 @@
+.image-tile {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: manipulation;
+    cursor: grab;
+}
+
+.image-tile:active {
+    cursor: grabbing;
+}
+
+.image-tile-slider {
+    display: flex;
+    
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-tile-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: manipulation;
+}
+
+.image-tile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+}
+
+.image-tile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+}
+
+.image-tile-subtitle {
+    margin: 0;
+
+    color: var(--image-tile-subtitle-color, #e8e8e8);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.image-tile-title {
+    margin: 0;
+
+    color: var(--image-tile-title-color, #000);
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.image-tile-image-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    display: flex;
+    z-index: 3;
+
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+.image-tile-image-arrows {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+
+    transform: translateY(-50%);
+}
+
+.image-tile-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.image-tile-dot.active {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.image-tile-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.image-tile-arrow {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    filter: var(--image-tile-arrow-filter, brightness(0) invert(1));
+}
+
+@media (min-width: 769px) {
+    .image-tile-container {
+        aspect-ratio: 1 / 1;
+    }
+    
+    .image-tile-content {
+        padding: 32px;
+    }
+    
+    .image-tile-subtitle {
+        font-size: 16px;
+    }
+    
+    .image-tile-title {
+        font-size: 28px;
+    }
+
+    .image-tile-image-dots {
+        bottom: 15px;
+    }
+    
+    .image-tile-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .image-tile-arrow {
+        width: 48px;
+        height: 48px;
+    }
+    
+}
