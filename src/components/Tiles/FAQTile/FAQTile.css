@@ -19,9 +19,11 @@
     transition: all 0.3s ease;
 }
 
-.faq-tile-container:hover {
-    background-color: #f1f3f4;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+@media (hover: hover) {
+    .faq-tile-container:hover {
+        background-color: #f1f3f4;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .faq-tile button {
@@ -35,29 +37,40 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
 
     text-align: left;
 }
 
 .faq-tile button:hover {
-    background-color: #f1f3f4;
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.faq-tile button {
+    pointer-events: none;
+}
+
+.faq-tile-container {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .faq-tile-question-text {
     flex: 1;
 
-    color: #333;
-    font-size: 16px;
+    color: #000;
+    font-size: 14px;
     line-height: 1.4;
     font-weight: 500;
 }
 
 .faq-tile-arrow {
-    margin-left: 12px;
+    margin-left: 14px;
     transition: transform 0.3s ease;
 
-    color: #666;
-    font-size: 12px;
+    color: #000;
+    font-size: 10px;
 }
 
 .faq-tile-arrow.open {
@@ -72,11 +85,10 @@
     animation: slideDown 0.3s ease-out;
 }
 
-
 .faq-tile-answer-text {
     color: #666;
     line-height: 1.6;
-    font-size: 14px;
+    font-size: 12px;
     white-space: pre-line;
 }
 
@@ -105,12 +117,14 @@
     }
     
     .faq-tile-question-text {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .faq-tile-answer {
         padding: 0 24px 16px 24px;
+    }
 
-        font-size: 16px;
+    .faq-tile-answer-text {
+        font-size: 14px;
     }
 }

@@ -15,8 +15,8 @@ const FAQTile: React.FC<FAQTileProps> = ({ question, answer }) => {
 
     return (
         <div className="faq-tile">
-            <div className="faq-tile-container">
-                <button onClick={toggleOpen}>
+            <div className="faq-tile-container" onClick={toggleOpen}>
+                <button>
                     <div className="faq-tile-question-text">{question}</div>
                     <div className={`faq-tile-arrow ${isOpen ? 'open' : ''}`}>
                         ▼

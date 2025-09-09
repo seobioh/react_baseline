@@ -46,14 +46,14 @@
     flex: 1;
 
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     font-weight: 500;
 }
 
 .faq-page-button-arrow {
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     font-weight: 500;
 }
@@ -64,6 +64,6 @@
     }
     
     .faq-page-button-text {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
