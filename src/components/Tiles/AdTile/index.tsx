@@ -104,19 +104,19 @@ const AdTile: React.FC<AdTileProps> = ({
     };
 
     const handleTouchStart = (e: React.TouchEvent) => {
-        e.preventDefault();
         const touch = e.touches[0];
         handleStart(touch.clientX);
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
-        e.preventDefault();
+        if (isDragging) {
+            e.preventDefault();
+        }
         const touch = e.touches[0];
         handleMove(touch.clientX);
     };
 
     const handleTouchEnd = (e: React.TouchEvent) => {
-        e.preventDefault();
         handleEnd();
     };
 
