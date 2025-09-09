@@ -7,7 +7,11 @@ import Body from "../Body";
 import Footer from "../Footer";
 import "./Layout.css";
 
-function Layout() {
+interface LayoutProps {
+  isPadding?: boolean;
+}
+
+function Layout({ isPadding = true }: LayoutProps) {
   return (
     <div className="layout">
       <div className="layout-container">
@@ -15,7 +19,7 @@ function Layout() {
         <Navbar />
         <Space8px />
         <Divider />
-        <Body>
+        <Body style={!isPadding ? { padding: 0 } : undefined}>
           <Outlet />
         </Body>
         <Footer />
