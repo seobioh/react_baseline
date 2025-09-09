@@ -116,7 +116,7 @@ const AdTile: React.FC<AdTileProps> = ({
         handleMove(touch.clientX);
     };
 
-    const handleTouchEnd = (e: React.TouchEvent) => {
+    const handleTouchEnd = () => {
         handleEnd();
     };
 
