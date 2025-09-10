@@ -32,6 +32,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     touch-action: manipulation;
+    
 }
 
 .image-tile-image {
@@ -122,6 +123,23 @@
     filter: var(--image-tile-arrow-filter, brightness(0) invert(1));
 }
 
+.image-tile-no-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+}
+
+.image-tile-no-image p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
 @media (min-width: 769px) {
     .image-tile-container {
         aspect-ratio: 1 / 1;
@@ -153,4 +171,11 @@
         height: 48px;
     }
     
+    .image-tile-no-image {
+        aspect-ratio: 1 / 1;
+    }
+    
+    .image-tile-no-image p {
+        font-size: 16px;
+    }
 }

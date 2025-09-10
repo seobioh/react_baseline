@@ -96,9 +96,14 @@
     width: 100%;
 }
 
-.detail-tile-container-sub-title {
-    color: var(--detail-tile-sub-title-color, #848484);
+.detail-tile-container-category {
+    color: var(--detail-tile-category-color, #848484);
     font-size: 12px;
+}
+
+.detail-tile-container-sub-title {
+    color: var(--detail-tile-sub-title-color, #999);
+    font-size: 11px;
 }
 
 .detail-tile-container-title {
@@ -134,6 +139,10 @@
         aspect-ratio: 7/8;
     }
 
+    .detail-tile-container-category {
+        font-size: 12px;
+    }
+    
     .detail-tile-container-sub-title {
         font-size: 12px;
     }

@@ -124,7 +124,15 @@ const ImageTile: React.FC<ImageTileProps> = ({
     };
 
 
-    if (!currentImage) return null;
+    if (images.length === 0 || !currentImage) {
+        return (
+            <div className={`image-tile ${className}`}>
+                <div className="image-tile-no-image">
+                    <p>사진이 없습니다</p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div 

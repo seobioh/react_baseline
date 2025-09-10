@@ -55,13 +55,13 @@ const HomePage: React.FC = () => {
             <SubTitle> 이번 주에 새롭게 입고된 차량들을 확인해 보세요. </SubTitle>
             <SpaceSmall />
             <div className="home-page-tile-list">
-                <DetailTile title="488 GTB" subTitle="Ferrari" image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="S600" subTitle="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="488 GTB" category="Ferrari"  image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="S600" category="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" subTitle="G83" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
             </div>
             <SpaceXXXLarge />
 
@@ -69,13 +69,13 @@ const HomePage: React.FC = () => {
             <SubTitle> 넘치는 매력으로 수요가 많은 차량이에요. </SubTitle>
             <SpaceSmall />
             <div className="home-page-tile-list">
-                <DetailTile title="488 GTB" subTitle="Ferrari" image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="S600" subTitle="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="488 GTB" category="Ferrari" image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="S600" category="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
             </div>
             <SpaceXXXLarge />
 
@@ -83,13 +83,13 @@ const HomePage: React.FC = () => {
             <SubTitle> 수리비 걱정 없이 차량을 구독할 수 있어요! </SubTitle> 
             <SpaceSmall />
             <div className="home-page-tile-list">
-                <DetailTile title="488 GTB" subTitle="Ferrari" image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="S600" subTitle="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
-                <DetailTile title="M4" subTitle="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="488 GTB" category="Ferrari" image={sampleImage1} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="S600" category="Mercedes-Benz" image={sampleImage2} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
+                <DetailTile title="M4" category="BMW" image={sampleImage3} onClick={() => navigate('/products')} price="월 100,000원 부터" />
             </div>
             <SpaceXXXLarge />
 
