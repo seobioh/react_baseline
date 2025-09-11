@@ -1,6 +1,5 @@
 import React from 'react';
-import { MainTitle } from "../../../components/Text";
-import { SpaceMedium, SpaceLarge, SpaceXLarge, SpaceXXXLarge } from "../../../components/Space";
+import { SpaceMedium, SpaceXXXLarge } from "../../../components/Space";
 import AccountInfo from '../../../components/Accounts/AccountInfo';
 import AccountSetting from '../../../components/Accounts/AccountAction';
 import './AccountPage.css';
