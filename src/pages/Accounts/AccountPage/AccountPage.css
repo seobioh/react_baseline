@@ -7,31 +7,59 @@
     width: 100%;
 }
 
-.account-left-section {
+.account-page-left-section {
     display: flex;
     flex-direction: column;
     
     width: 100%;
 }
 
-.account-right-section {
+.account-page-right-section {
     display: flex;
     flex-direction: column;
-    
+    align-items: flex-start;
+    justify-content: center;
+
     width: 100%;
 }
 
-.account-setting-mobile {
+.account-page-setting-mobile {
+    display: block;
+    width: 100%;
+}
+
+.account-page-setting-desktop {
     display: none;
 }
 
-.account-setting-desktop {
-    display: block;
-}
-
-.account-space {
+.account-page-space {
     width: 100%;
     height: 8px;
+}
+
+.account-page-right-section > p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.account-page-right-section > h3 {
+    gap: 4px;
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.account-page-right-section > h4 {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
 }
 
 @media (min-width: 768px) {
@@ -41,22 +69,22 @@
         justify-content: flex-start;
     }
 
-    .account-left-section {
+    .account-page-left-section {
         flex-shrink: 0;
         width: 480px;
     }
 
-    .account-right-section {
+    .account-page-right-section {
         flex: 1;
         min-width: 0;
     }
 
-    .account-space {
+    .account-page-space {
         width: 32px;
         height: 100%;
     }
     
-    .account-divider {
+    .account-page-divider {
         align-self: stretch;
         flex-shrink: 0;
 
@@ -67,11 +95,24 @@
         background-color: #ddd;
     }
 
-    .account-setting-mobile {
+    .account-page-setting-mobile {
+        display: none;
+    }
+
+    .account-page-setting-desktop {
         display: block;
     }
 
-    .account-setting-desktop {
-        display: none;
+    .account-page-right-section > p {
+        font-size: 12px;
     }
+    
+    .account-page-right-section > h3 {
+        font-size: 20px;
+    }
+    
+    .account-page-right-section > h4 {
+        font-size: 14px;
+    }
+    
 }

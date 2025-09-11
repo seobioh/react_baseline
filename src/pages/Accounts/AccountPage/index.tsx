@@ -8,18 +8,18 @@ const AccountPage: React.FC = () => {
     return (
         <>
             <div className="account-page">
-                <div className="account-left-section">
+                <div className="account-page-left-section">
                     <AccountInfo />
-                    <div className="account-setting-mobile">
+                    <div className="account-page-setting-desktop">
                         <SpaceMedium />
                         <AccountSetting />
                     </div>
                 </div>
-                <div className="account-space"></div>
-                <div className="account-divider"></div>
-                <div className="account-space"></div>
-                <div className="account-right-section">
-                    <div className="account-setting-desktop">
+                <div className="account-page-space"></div>
+                <div className="account-page-divider"></div>
+                <div className="account-page-space"></div>
+                <div className="account-page-right-section">
+                    <div className="account-page-setting-mobile">
                         <AccountSetting />
                         <SpaceXXXLarge/>
                         <SpaceMedium />
