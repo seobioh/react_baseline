@@ -32,6 +32,7 @@ const AdTile: React.FC<AdTileProps> = ({
     const [dragOffset, setDragOffset] = useState(0);
     const [hasDragged, setHasDragged] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
+    const [slideWidth, setSlideWidth] = useState(100);
     const containerRef = useRef<HTMLDivElement>(null);
     
     const currentAd = ads[currentAdIndex];
@@ -43,6 +44,21 @@ const AdTile: React.FC<AdTileProps> = ({
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+
+    useEffect(() => {
+        const updateSlideWidth = () => {
+            if (containerRef.current) {
+                const containerWidth = containerRef.current.offsetWidth;
+                const gap = 16;
+                const newSlideWidth = (containerWidth + gap) / containerWidth * 100;
+                setSlideWidth(newSlideWidth);
+            }
+        };
+
+        updateSlideWidth();
+        window.addEventListener('resize', updateSlideWidth);
+        return () => window.removeEventListener('resize', updateSlideWidth);
     }, []);
 
     useEffect(() => {
@@ -103,6 +119,7 @@ const AdTile: React.FC<AdTileProps> = ({
         }, 100);
     };
 
+
     const handleTouchStart = (e: React.TouchEvent) => {
         const touch = e.touches[0];
         handleStart(touch.clientX);
@@ -140,7 +157,6 @@ const AdTile: React.FC<AdTileProps> = ({
         handleEnd();
     };
 
-
     if (!currentAd) return null;
 
     return (
@@ -158,7 +174,7 @@ const AdTile: React.FC<AdTileProps> = ({
             <div 
                 className="ad-tile-slider"
                 style={{
-                    transform: `translateX(calc(-${currentAdIndex * 100}% + ${dragOffset}px))`,
+                    transform: `translateX(calc(-${currentAdIndex * slideWidth}% + ${dragOffset}px))`,
                     transition: isDragging ? 'none' : 'transform 0.5s ease-in-out'
                 }}
             >

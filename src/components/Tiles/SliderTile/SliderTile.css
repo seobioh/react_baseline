@@ -1,4 +1,4 @@
-.ad-tile {
+.slider-tile {
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -11,22 +11,19 @@
     cursor: grab;
 }
 
-.ad-tile:active {
+.slider-tile:active {
     cursor: grabbing;
 }
 
-.ad-tile-slider {
+.slider-tile-slider {
     display: flex;
     width: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
-.ad-tile-container {
+.slider-tile-container {
     width: 100%;
-    border-radius: 8px;
-    aspect-ratio: 2 / 1;
-    overflow: hidden;
-    position: relative;
+    min-width: 100%;
     flex-shrink: 0;
     margin-right: 16px;
     user-select: none;
@@ -36,21 +33,11 @@
     touch-action: manipulation;
 }
 
-.ad-tile-container:last-child {
+.slider-tile-container:last-child {
     margin-right: 0;
 }
 
-.ad-tile-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    width: 100%;
-    height: 100%;
-}
-
-.ad-tile-button {
+.slider-tile-button {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -66,40 +53,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-.ad-tile-button.disabled {
+.slider-tile-button.disabled {
     cursor: default;
 }
 
-.ad-tile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    gap: 8px;
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-}
-
-.ad-tile-subtitle {
-    margin: 0;
-
-    color: var(--ad-tile-subtitle-color, #e8e8e8);
-    font-size: 12px;
-    font-weight: 400;
-}
-
-.ad-tile-title {
-    margin: 0;
-
-    color: var(--ad-tile-title-color, #000);
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-.ad-tile-ad-dots {
+.slider-tile-dots {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -110,7 +68,7 @@
     transform: translateX(-50%);
 }
 
-.ad-tile-dot {
+.slider-tile-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -120,36 +78,32 @@
     transition: background-color 0.2s ease;
 }
 
-.ad-tile-dot.active {
+.slider-tile-dot.active {
     background: rgba(255, 255, 255, 0.9);
 }
 
-.ad-tile-dot:hover {
+.slider-tile-dot:hover {
     background: rgba(255, 255, 255, 0.8);
 }
 
-@media (min-width: 769px) {
-    .ad-tile-container {
-        aspect-ratio: 4 / 1;
-    }
-    
-    .ad-tile-content {
+@media (min-width: 769px) {    
+    .slider-tile-content {
         padding: 32px;
     }
     
-    .ad-tile-subtitle {
+    .slider-tile-subtitle {
         font-size: 16px;
     }
     
-    .ad-tile-title {
+    .slider-tile-title {
         font-size: 28px;
     }
 
-    .ad-tile-ad-dots {
+    .slider-tile-ad-dots {
         bottom: 15px;
     }
     
-    .ad-tile-dot {
+    .slider-tile-dot {
         width: 8px;
         height: 8px;
     }
