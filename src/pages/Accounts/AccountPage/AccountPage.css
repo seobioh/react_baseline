@@ -1,0 +1,77 @@
+.account-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.account-left-section {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+}
+
+.account-right-section {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+}
+
+.account-setting-mobile {
+    display: none;
+}
+
+.account-setting-desktop {
+    display: block;
+}
+
+.account-space {
+    width: 100%;
+    height: 8px;
+}
+
+@media (min-width: 768px) {
+    .account-page {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .account-left-section {
+        flex-shrink: 0;
+        width: 480px;
+    }
+
+    .account-right-section {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .account-space {
+        width: 32px;
+        height: 100%;
+    }
+    
+    .account-divider {
+        align-self: stretch;
+        flex-shrink: 0;
+
+        width: 1px;
+        height: auto;
+        min-height: 200px;
+        margin: 0;
+        background-color: #ddd;
+    }
+
+    .account-setting-mobile {
+        display: block;
+    }
+
+    .account-setting-desktop {
+        display: none;
+    }
+}
