@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAccountStore } from '../../../stores/accountStore';
 import profileImage from '../../../assets/images/light/profile.png';
 import checkIcon from '../../../assets/icons/light/check.svg';
-import settingIcon from '../../../assets/icons/light/setting.svg';
 import PointRedeem from '../../Users/PointCoupon';
 import './AccountInfo.css';
 
