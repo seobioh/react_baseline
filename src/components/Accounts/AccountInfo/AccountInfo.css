@@ -16,9 +16,9 @@
     width: 100%;
     padding: 16px 16px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid #ddd;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #f8f9fa;
 }
 
 .account-info-container h3 {
@@ -60,7 +60,7 @@
 
     height: 72px;
     width: 1px;
-    background-color: #c2c2c2;
+    background-color: #ddd;
 }
 
 .account-info-content {
@@ -83,6 +83,12 @@
     align-items: center;
 
     gap: 8px;
+    height: 16px;
+}
+
+.account-info-name > button {
+    width: 16px;
+    height: 16px;
 }
 
 .account-info-name img {
@@ -115,7 +121,7 @@
     padding: 8px 8px;
     box-sizing: border-box;
     border-radius: 10px;
-    background-color: #00de5a;
+    background-color: #8cff20;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -148,7 +154,7 @@
     box-sizing: border-box;
     border: none;
     border-radius: 8px;
-    background-color: #0cbd4d;
+    background-color: #7ae600;
     cursor: pointer;
     transition: all 0.2s ease;
 
@@ -158,16 +164,20 @@
 }
 
 .account-info-code-exchange:hover {
-    background-color: #0aa83d;
+    background-color: #5bb800;
 }
 
 .account-info-code-exchange:active {
     transform: translateY(1px);
 
-    background-color: #099336;
+    background-color: #5bb800;
 }
 
 @media (min-width: 768px) {
+    .account-info {
+        gap: 24px;
+    }
+
     .account-info-container {
         max-width: 480px;
         padding: 16px 16px;

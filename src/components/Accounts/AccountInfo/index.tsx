@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAccountStore } from '../../../stores/accountStore';
 import profileImage from '../../../assets/images/light/profile.png';
 import checkIcon from '../../../assets/icons/light/check.svg';
+import settingIcon from '../../../assets/icons/light/setting.svg';
 import PointRedeem from '../../Users/PointCoupon';
 import './AccountInfo.css';
 
@@ -20,6 +21,10 @@ const AccountInfo : React.FC = () => {
         }
     }, [token, navigate, getAccountInfo]);
     
+    const accountSettingBox = () => {
+        navigate('/accounts/settings');
+    };
+
     const pointTransactionBox = () => {
         navigate('/users/point-transactions');
     };
@@ -36,7 +41,7 @@ const AccountInfo : React.FC = () => {
     return (
         <div className="account-info">
             <div className="account-info-container">
-                <div className="account-info-section">
+                <div className="account-info-section" onClick={accountSettingBox}>
                     <img src={user?.profile_image || profileImage} alt="프로필 이미지" />
                     <div className="account-info-divider" />
                     <div className="account-info-content">
@@ -51,17 +56,17 @@ const AccountInfo : React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="account-info-point-section" onClick={pointTransactionBox}>
-                    <div className="account-info-point">
-                        <p>{user?.point} 원</p>
-                    </div>
-                    <button className="account-info-code-exchange" onClick={(e) => {
-                        e.stopPropagation();
-                        handleCodeExchange();
-                    }}>
-                        코드 교환
-                    </button>
+            </div>
+            <div className="account-info-point-section" onClick={pointTransactionBox}>
+                <div className="account-info-point">
+                    <p>{user?.point} 원</p>
                 </div>
+                <button className="account-info-code-exchange" onClick={(e) => {
+                    e.stopPropagation();
+                    handleCodeExchange();
+                }}>
+                    코드 교환
+                </button>
             </div>
             <PointRedeem 
                 isOpen={isPointRedeemModalOpen}

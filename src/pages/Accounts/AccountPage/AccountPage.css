@@ -62,6 +62,106 @@
     font-weight: 600;
 }
 
+.account-page-subscription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    padding: 8px 0;
+    box-sizing: border-box;
+}
+
+.account-page-subscription > p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.account-page-subscription-space {
+    width: 100%;
+    height: 12px;
+}
+
+.account-page-subscription-button {
+    display: flex;
+    
+    gap: 16px;
+}
+
+.account-page-subscription-button button {
+    padding: 0 4px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    color: #848484;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.account-page-subscription-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 2px;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.account-page-subscription-info-date {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.account-page-subscription-info img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+}
+
+.account-page-subscription-info > p {
+    color: #000;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.account-page-subscription-info > h3 {
+    color: #000;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.account-page-subscription-info > h4 {
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
+}
+
+@media (hover: hover) {
+    .account-page-subscription-button button:hover {
+        background-color: #e9ecef;
+    }
+}
+
+.account-page-subscription-button button.active {
+    border-bottom: 2px solid #8cff20;
+    color: #000;
+}
+
 @media (min-width: 768px) {
     .account-page {
         flex-direction: row;
@@ -86,12 +186,15 @@
     
     .account-page-divider {
         align-self: stretch;
+        align-items: flex-start;
         flex-shrink: 0;
 
         width: 1px;
         height: auto;
         min-height: 200px;
-        margin: 0;
+        max-height: 456px;
+        margin: 8px 0;
+        box-sizing: border-box;
         background-color: #ddd;
     }
 
@@ -114,5 +217,20 @@
     .account-page-right-section > h4 {
         font-size: 14px;
     }
+
+    .account-page-subscription {
+        padding: 0;
+    }
+
+    .account-page-subscription-space {
+        height: 16px;
+    }
     
+    .account-page-subscription > p {
+        font-size: 14px;
+    }
+    
+    .account-page-subscription-button {
+        gap: 24px;
+    }
 }

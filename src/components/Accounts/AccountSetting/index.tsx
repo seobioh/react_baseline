@@ -18,11 +18,6 @@ const AccountSetting: React.FC = () => {
         // TODO: 본인 인증 페이지로 이동
         alert('본인 인증 기능은 준비 중입니다.');
     };
-
-    const handleCouponBox = () => {
-        // TODO: 쿠폰함 페이지로 이동
-        alert('쿠폰함 기능은 준비 중입니다.');
-    };
         
     const handleReferralStatus = () => {
         navigate('/users/referrals');
@@ -48,38 +43,33 @@ const AccountSetting: React.FC = () => {
     
     return (
         <div className="account-setting">
-            <div className="account-action-container">
-                <div className="account-action-section">
-                    <button className="account-action-section-button" onClick={handleCouponBox}>
-                        <p>혜택 쿠폰함</p>
-                        <img src={arrowForwardIcon} alt="arrow-forward" />
-                    </button>
-                    <div className="account-action-divider" />
-                    <button className="account-action-section-button" onClick={handleReferralStatus}>
+            <div className="account-setting-container">
+                <div className="account-setting-section">
+                    <button className="account-setting-section-button" onClick={handleReferralStatus}>
                         <p>추천인 현황</p>
                         <img src={arrowForwardIcon} alt="arrow-forward" />
                     </button>
-                    <div className="account-action-divider" />
+                    <div className="account-setting-divider" />
                     {!user?.ci_verified && (
                         <>
-                            <button className="account-action-section-button" onClick={handleIdentityVerification}>
+                            <button className="account-setting-section-button" onClick={handleIdentityVerification}>
                                 <p>본인인증</p>
                                 <img src={arrowForwardIcon} alt="arrow-forward" />
                             </button>
-                            <div className="account-action-divider" />
+                            <div className="account-setting-divider" />
                         </>
                     )}
-                    <button className="account-action-section-button" onClick={handleEditProfile}>
+                    <button className="account-setting-section-button" onClick={handleEditProfile}>
                         <p>회원정보 수정</p>
                         <img src={arrowForwardIcon} alt="arrow-forward" />
                     </button>
-                    <div className="account-action-divider" />
-                    <button className="account-action-section-button" onClick={handleChangePassword}>
+                    <div className="account-setting-divider" />
+                    <button className="account-setting-section-button" onClick={handleChangePassword}>
                         <p>비밀번호 변경</p>
                         <img src={arrowForwardIcon} alt="arrow-forward" />
                     </button>
-                    <div className="account-action-divider" />
-                    <button className="account-action-section-button" onClick={handleLogout}>
+                    <div className="account-setting-divider" />
+                    <button className="account-setting-section-button" onClick={handleLogout}>
                         <p>로그아웃</p>
                         <img src={arrowForwardIcon} alt="arrow-forward" />
                     </button>

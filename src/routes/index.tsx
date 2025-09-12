@@ -8,6 +8,7 @@ import EventDetailPage from '../pages/Events/EventDetailPage';
 import FAQPage from '../pages/FAQs/FAQPage';
 import AboutPage from '../pages/Abouts/AboutPage';
 import AccountPage from '../pages/Accounts/AccountPage';
+import AccountSettingPage from '../pages/Accounts/AccountSettingPage';
 import LoginPage from '../pages/Accounts/LoginPage';
 import SignupPage from '../pages/Accounts/SignupPage';
 import KakaoPage from '../pages/Accounts/KakaoPage';
@@ -80,6 +81,13 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <AccountPage /> },
+        ],
+    },
+    {
+        path: '/accounts/settings',
+        element: <Layout />,
+        children: [
+            { index: true, element: <AccountSettingPage /> },
         ],
     },
     {
