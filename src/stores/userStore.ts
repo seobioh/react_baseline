@@ -61,12 +61,12 @@ export const useUserStore = create<UserState>()((set) => ({
         }
       });
       const result = await response.json();
-      if (response.status >= 200 && response.status < 300) {
+      if (response.status >= 200 && response.status < 300 && result.data) {
         set({ 
-          referralStatus: result,
+          referralStatus: result.data.referrals,
           isLoading: false 
         });
-        return result;
+        return result.data.referrals;
       } else {
         set({ isLoading: false });
         throw new Error(result.message || '추천인 현황 조회에 실패했습니다.');
@@ -93,12 +93,12 @@ export const useUserStore = create<UserState>()((set) => ({
         }
       });
       const result = await response.json();
-      if (response.status >= 200 && response.status < 300) {
+      if (response.status >= 200 && response.status < 300 && result.data) {
         set({ 
-          pointTransactions: result,
+          pointTransactions: result.data.point_transactions || [],
           isLoading: false 
         });
-        return result;
+        return result.data.point_transactions || [];
       } else {
         set({ isLoading: false });
         throw new Error(result.message || '포인트 거래내역 조회에 실패했습니다.');
@@ -127,7 +127,7 @@ export const useUserStore = create<UserState>()((set) => ({
       const result = await response.json();
       if (response.status >= 200 && response.status < 300) {
         set({ isLoading: false });
-        return result;
+        return result.data;
       } else {
         set({ isLoading: false });
         throw new Error(result.message || '포인트 쿠폰 사용에 실패했습니다.');
@@ -156,7 +156,7 @@ export const useUserStore = create<UserState>()((set) => ({
       const result = await response.json();
       if (response.status >= 200 && response.status < 300) {
         set({ isLoading: false });
-        return result;
+        return result.data.referral;
       } else {
         set({ isLoading: false });
         throw new Error(result.message || '추천인 코드 등록에 실패했습니다.');

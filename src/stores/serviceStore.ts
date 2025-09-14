@@ -139,7 +139,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ notices: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ notices: result.data.notices || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '공지사항 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -155,7 +160,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.notice;
+          } else {
+            throw new Error(result.message || '공지사항 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }
@@ -173,7 +182,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ events: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ events: result.data.events || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '이벤트 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -189,7 +203,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.event;
+          } else {
+            throw new Error(result.message || '이벤트 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }
@@ -207,7 +225,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ ads: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ ads: result.data.ads || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '광고 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -223,7 +246,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.ad;
+          } else {
+            throw new Error(result.message || '광고 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }
@@ -241,7 +268,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ faqs: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ faqs: result.data.faqs || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || 'FAQ 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -257,7 +289,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.faq;
+          } else {
+            throw new Error(result.message || 'FAQ 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }
@@ -275,7 +311,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ privacyPolicies: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ privacyPolicies: result.data.privacy_policies || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '개인정보처리방침 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -291,7 +332,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.privacy_policy;
+          } else {
+            throw new Error(result.message || '개인정보처리방침 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }
@@ -309,7 +354,12 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          set({ terms: result, isLoading: false });
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            set({ terms: result.data.terms || [], isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '이용약관 조회에 실패했습니다.');
+          }
         } catch (error) {
           set({ isLoading: false });
           throw error;
@@ -325,7 +375,11 @@ export const useServiceStore = create<ServiceState>()(
           }
           
           const result = await response.json();
-          return result;
+          if (response.status >= 200 && response.status < 300 && result.data) {
+            return result.data.term;
+          } else {
+            throw new Error(result.message || '이용약관 상세 조회에 실패했습니다.');
+          }
         } catch (error) {
           throw error;
         }

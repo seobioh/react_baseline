@@ -93,9 +93,6 @@ interface AccountState {
   googleLogin: (data: SocialLoginRequest) => Promise<void>;
   naverLogin: (data: SocialLoginRequest) => Promise<void>;
   
-  requestPassAuth: () => Promise<any>;
-  verifyPassAuth: (identityCode: string) => Promise<void>;
-  
   setLoading: (loading: boolean) => void;
   checkTokenValidityandRefresh: () => Promise<boolean>;
 }
@@ -119,11 +116,11 @@ export const useAccountStore = create<AccountState>()(
             body: JSON.stringify(data)
           });
           const result = await response.json();
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
+              user: result.data.user,
               token: {
-                ...result.token,
+                ...result.data.token,
                 issued_at: Math.floor(Date.now() / 1000)
               },
               isAuthenticated: true,
@@ -159,10 +156,13 @@ export const useAccountStore = create<AccountState>()(
             body: JSON.stringify(data)
           });
           const result = await response.json();
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
-              token: result.token,
+              user: result.data.user,
+              token: {
+                ...result.data.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -190,18 +190,16 @@ export const useAccountStore = create<AccountState>()(
             })
           });
           const result = await response.json();
-          if (result.code === 0) {
+          if (response.status >= 200 && response.status < 300 && result.data?.access_token) {
             set({
               token: {
-                ...token,
-                access_token: result.access_token,
-                expires_in: result.expires_in,
+                ...result.data.token,
                 issued_at: Math.floor(Date.now() / 1000)
-              }
+              },
             });
-            return result.access_token;
+            return result.data.access_token;
           } else {
-            throw new Error('토큰 갱신에 실패했습니다.');
+            throw new Error(result.message || '토큰 갱신에 실패했습니다.');
           }
         } catch (error) {
           // 토큰 갱신 실패 시 로그아웃
@@ -223,9 +221,9 @@ export const useAccountStore = create<AccountState>()(
             }
           });
           const result = await response.json();
-          if (result.code === 0) {
+          if (response.status >= 200 && response.status < 300 && result.data?.user) {
             set({
-              user: result.user,
+              user: result.data.user,
               isLoading: false
             });
           } else {
@@ -252,9 +250,9 @@ export const useAccountStore = create<AccountState>()(
             body: JSON.stringify(data)
           });
           const result = await response.json();
-          if (result.code === 0) {
+          if (response.status >= 200 && response.status < 300 && result.data?.user) {
             set({
-              user: result.user,
+              user: result.data.user,
               isLoading: false
             });
           } else {
@@ -280,7 +278,7 @@ export const useAccountStore = create<AccountState>()(
             }
           });
           const result = await response.json();
-          if (result.code === 0) {
+          if (response.status >= 200 && response.status < 300) {
             useAccountStore.getState().logout();
           } else {
             set({ isLoading: false });
@@ -301,11 +299,10 @@ export const useAccountStore = create<AccountState>()(
             },
             body: JSON.stringify(data)
           });
-          const result = await response.json();
           if (response.status === 400) {
-            return false; // 사용 불가능한 이메일
+            return false;
           }
-          return result.code === 0;
+          return response.status >= 200 && response.status < 300;
         } catch (error) {
           throw error;
         }
@@ -325,7 +322,7 @@ export const useAccountStore = create<AccountState>()(
 
           const result = await response.json();
 
-          if (result.code === 0) {
+          if (response.status >= 200 && response.status < 300) {
             set({ isLoading: false });
           } else {
             set({ isLoading: false });
@@ -351,10 +348,13 @@ export const useAccountStore = create<AccountState>()(
 
           const result = await response.json();
 
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
-              token: result.token,
+              user: result.data.user,
+              token: {
+                ...result.data.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -382,10 +382,13 @@ export const useAccountStore = create<AccountState>()(
 
           const result = await response.json();
 
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
-              token: result.token,
+              user: result.data.user,
+              token: {
+                ...result.data.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -413,10 +416,13 @@ export const useAccountStore = create<AccountState>()(
 
           const result = await response.json();
 
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
-              token: result.token,
+              user: result.data.user,
+              token: {
+                ...result.data.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -444,10 +450,13 @@ export const useAccountStore = create<AccountState>()(
 
           const result = await response.json();
 
-          if (result.code === 0 && result.token) {
+          if (response.status >= 200 && response.status < 300 && result.data?.token) {
             set({
-              user: result.user,
-              token: result.token,
+              user: result.data.user,
+              token: {
+                ...result.data.token,
+                issued_at: Math.floor(Date.now() / 1000)
+              },
               isAuthenticated: true,
               isLoading: false
             });
@@ -461,59 +470,6 @@ export const useAccountStore = create<AccountState>()(
         }
       },
 
-      requestPassAuth: async () => {
-        set({ isLoading: true });
-
-        try {
-          const response = await fetch(`${BASE_URL}/accounts/pass/request`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            }
-          });
-
-          const result = await response.json();
-
-          if (result.code === 0) {
-            set({ isLoading: false });
-            return result.data;
-          } else {
-            set({ isLoading: false });
-            throw new Error(result.message || 'PASS 인증 요청에 실패했습니다.');
-          }
-        } catch (error) {
-          set({ isLoading: false });
-          throw error;
-        }
-      },
-
-      verifyPassAuth: async (identityCode: string) => {
-        set({ isLoading: true });
-
-        try {
-          const response = await fetch(`${BASE_URL}/accounts/pass`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              identity_code: identityCode
-            })
-          });
-
-          const result = await response.json();
-
-          if (result.code === 0) {
-            set({ isLoading: false });
-          } else {
-            set({ isLoading: false });
-            throw new Error(result.message || 'PASS 인증에 실패했습니다.');
-          }
-        } catch (error) {
-          set({ isLoading: false });
-          throw error;
-        }
-      },
 
       setLoading: (loading: boolean) => {
         set({ isLoading: loading });
