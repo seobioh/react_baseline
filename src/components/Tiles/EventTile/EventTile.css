@@ -50,22 +50,8 @@
     height: 100%;
 }
 
-.event-tile-image.expired::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-
-    background-color: rgba(128, 128, 128, 0.4);
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-.event-tile-container:hover .event-tile-image.expired::after {
-    background-color: rgba(64, 64, 64, 0.6);
+.event-tile-image.expired {
+    opacity: 0.85;
 }
 
 .event-tile-button {

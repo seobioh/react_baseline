@@ -18,6 +18,10 @@
     .detail-tile-container:hover {
         filter: brightness(0.8);
     }
+    
+    .detail-tile-container:has(button.disabled):hover {
+        filter: none;
+    }
 }
 
 .detail-tile-container button{
@@ -38,17 +42,11 @@
 }
 
 .detail-tile-container:has(button.disabled) {
-    filter: brightness(0.95);
+    opacity: 0.5;
 }
 
 .detail-tile-container button.disabled {
-    cursor: default;
-}
-
-@media (hover: hover) {
-    .detail-tile-container:has(button.disabled):hover {
-        filter: brightness(0.95);
-    }
+    cursor: not-allowed;
 }
 
 .detail-tile-top {
