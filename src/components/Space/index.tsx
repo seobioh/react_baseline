@@ -6,7 +6,14 @@ function Space8px() {
     </div>
   );
 }
-  
+
+function Space16px() {
+  return (
+    <div className="space-16px">
+    </div>
+  );
+}
+
 function SpaceXSmall() {
   return (
     <div className="space-x-small">
@@ -58,4 +65,4 @@ function SpaceXXXLarge() {
   );
 }
 
-export { Space8px, SpaceXSmall, SpaceSmall, SpaceMedium, SpaceLarge, SpaceXLarge, SpaceXXLarge, SpaceXXXLarge };
+export { Space8px, Space16px, SpaceXSmall, SpaceSmall, SpaceMedium, SpaceLarge, SpaceXLarge, SpaceXXLarge, SpaceXXXLarge };

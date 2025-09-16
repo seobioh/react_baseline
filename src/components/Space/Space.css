@@ -2,6 +2,10 @@
     height: 8px;
 }
 
+.space-16px {
+    height: 16px;
+}
+
 .space-x-small {
     height: 4px;
 }
@@ -33,6 +37,10 @@
 @media (min-width: 768px) {
     .space-8px {
         height: 8px;
+    }
+
+    .space-16px {
+        height: 16px;
     }
 
     .space-x-small {
