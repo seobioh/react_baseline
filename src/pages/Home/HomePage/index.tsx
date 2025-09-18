@@ -5,7 +5,7 @@ import { MainTitle, SubTitle } from '../../../components/Text';
 import { SpaceMedium, SpaceSmall, SpaceXXXLarge } from '../../../components/Space';
 import AdTile from '../../../components/Tiles/AdTile';
 import ButtonTile from '../../../components/Tiles/ButtonTile';
-import DetailTile from '../../../components/Tiles/DetailTile';
+import { DetailTile } from '../../../components/Tiles/DetailTile';
 import sampleImage1 from '../../../assets/images/light/sample_img_1.png';
 import sampleImage2 from '../../../assets/images/light/sample_img_2.png';
 import sampleImage3 from '../../../assets/images/light/sample_img_3.png';

@@ -63,6 +63,24 @@
     }
 
     .home-page-tile-list > * {
+        flex: 0 0 calc(100% / 2.9 - 12px);
+        
+        min-width: calc(100% / 2.9 - 12px);
+        max-width: calc(100% / 2.9 - 12px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-page-tile-list > * {
+        flex: 0 0 calc(100% / 3.2 - 12px);
+        
+        min-width: calc(100% / 3.2 - 12px);
+        max-width: calc(100% / 3.2 - 12px);
+    }
+}
+
+@media (min-width: 1280px) {
+    .home-page-tile-list > * {
         flex: 0 0 calc(100% / 4.1 - 12px);
         
         min-width: calc(100% / 4.1 - 12px);
