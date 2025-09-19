@@ -19,7 +19,7 @@
   max-height: 90vh;
   overflow-y: auto;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 4px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -115,7 +115,7 @@
   margin: 4px 0;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #fff;
   outline: none;
   transition: border-color 0.2s ease;
@@ -140,7 +140,7 @@
 
 .point-redeem-message {
   padding: 12px 16px;
-  border-radius: 8px;
+  border-radius: 4px;
 
   font-size: 14px;
   font-weight: 500;
@@ -172,7 +172,7 @@
   flex: 1;
   height: 48px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease;
 

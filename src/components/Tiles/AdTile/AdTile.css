@@ -2,7 +2,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    border-radius: 8px;
+    border-radius: 4px;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -23,7 +23,7 @@
 
 .ad-tile-container {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 4px;
     aspect-ratio: 2 / 1;
     overflow: hidden;
     position: relative;

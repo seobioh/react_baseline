@@ -65,7 +65,7 @@ const EventTile: React.FC<EventTileProps> = ({
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
-                                borderRadius: '8px'
+                                borderRadius: '4px'
                             }}></div>
 
                             <button 

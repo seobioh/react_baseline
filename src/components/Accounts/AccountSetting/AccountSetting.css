@@ -16,7 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     border: 0.2px solid #ddd;
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: #f8f9fa;
 }
 
@@ -48,7 +48,7 @@
     padding: 0 16px;
     box-sizing: border-box;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
 
@@ -73,7 +73,7 @@
     margin: 0 !important;
     box-sizing: border-box;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
 
@@ -86,6 +86,6 @@
     .account-setting-container {
         max-width: 480px;
         margin: 0 auto;
-        border-radius: 10px;
+        border-radius: 4px;
     }
 }

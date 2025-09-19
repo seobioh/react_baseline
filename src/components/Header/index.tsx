@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         setActiveTab(tabIndex);
     };
 
-    const tabOptions = ['선택1', '선택2'];
+    const tabOptions = ['KOR', 'ENG'];
 
     return (
         <div className="header">
