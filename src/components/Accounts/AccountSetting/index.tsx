@@ -13,7 +13,11 @@ const AccountSetting: React.FC = () => {
             navigate('/accounts/login');
         }
     }, [token, navigate]);
-    
+
+    const handleCouponStatus = () => {
+        navigate('/users/coupons');
+    };
+
     const handleIdentityVerification = () => {
         // TODO: 본인 인증 페이지로 이동
         alert('본인 인증 기능은 준비 중입니다.');
@@ -45,6 +49,11 @@ const AccountSetting: React.FC = () => {
         <div className="account-setting">
             <div className="account-setting-container">
                 <div className="account-setting-section">
+                    <button className="account-setting-section-button" onClick={handleCouponStatus}>
+                        <p>혜택 쿠폰함</p>
+                        <img src={arrowForwardIcon} alt="arrow-forward" />
+                    </button>
+                    <div className="account-setting-divider" />
                     <button className="account-setting-section-button" onClick={handleReferralStatus}>
                         <p>추천인 현황</p>
                         <img src={arrowForwardIcon} alt="arrow-forward" />

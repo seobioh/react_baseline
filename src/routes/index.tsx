@@ -19,6 +19,7 @@ import ChangePasswordPage from '../pages/Accounts/ChangePasswordPage';
 import AccountEditPage from '../pages/Accounts/AccountEditPage';
 import PointTransactionPage from '../pages/Users/PointTransactionPage';
 import ReferralPage from '../pages/Users/ReferralPage';
+import CouponPage from '../pages/Users/CouponPage';
 
 const router = createBrowserRouter([
     {
@@ -159,6 +160,13 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <ReferralPage /> },
+        ],
+    },
+    {
+        path: '/users/coupons',
+        element: <Layout />,
+        children: [
+            { index: true, element: <CouponPage /> },
         ],
     },
 ]);
