@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAccountStore } from '../../../stores/accountStore';
+import PortOne from '@portone/browser-sdk/v2';
 import './Signup.css';
 
 const SignUp : React.FC = () => {
+    const [searchParams] = useSearchParams();
     const [step, setStep] = useState(0);
     const [agreements, setAgreements] = useState({serviceTerms: false, privacyPolicy: false, ageVerification: false, marketingConsent: false});
     const [email, setEmail] = useState('');
     const [isEmailChecked, setIsEmailChecked] = useState(false);
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [identityCode, setIdentityCode] = useState('');
     const [isIdentityVerified, setIsIdentityVerified] = useState(false);
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,6 +39,36 @@ const SignUp : React.FC = () => {
             setIsIdentityVerified(false);
         }
     }, [name, phone]);
+
+    useEffect(() => {
+        const savedData = sessionStorage.getItem('signupData');
+        const identityVerificationId = searchParams.get('identityVerificationId');
+
+        if (savedData && identityVerificationId) {
+            try {
+                const { email: savedEmail, name: savedName, phone: savedPhone } = JSON.parse(savedData);
+                if (savedName && savedPhone) {
+                    setEmail(savedEmail);
+                    setName(savedName);
+                    setPhone(savedPhone);
+                    setIdentityCode(identityVerificationId);
+                    sessionStorage.removeItem('signupData');
+                    alert('본인 인증이 완료되었습니다.');
+                    setStep(3);
+                }
+            } catch (error) {
+                console.error('세션 스토리지 데이터 복원 실패:', error);
+                sessionStorage.removeItem('signupData');
+            }
+        }
+    }, []);
+    
+    useEffect(() => {
+        if (identityCode) {
+            setIsEmailChecked(true);
+            setIsIdentityVerified(true);
+        }
+    }, [identityCode]);
     
     const handleAgreementChange = (key: keyof typeof agreements) => {
         setAgreements(prev => ({
@@ -90,16 +123,19 @@ const SignUp : React.FC = () => {
             alert('이름과 전화번호를 입력해주세요.');
             return;
         }
-        setIsLoading(true);
-        try {
-            setIsIdentityVerified(true);
-            alert('본인 인증이 완료되었습니다.');
-            setStep(3);
-        } catch (error) {
-            alert('본인 인증에 실패했습니다.');
-        } finally {
-            setIsLoading(false);
-        }
+        sessionStorage.setItem('signupData', JSON.stringify({ email, name, phone }));
+        const response = await PortOne.requestIdentityVerification({
+            storeId: import.meta.env.VITE_PORTONE_STORE_ID,
+            identityVerificationId: `identity-verification-${crypto.randomUUID()}`,
+            channelKey: import.meta.env.VITE_PORTONE_CHANNEL_KEY,
+            redirectUrl: `${window.location.origin}/accounts/signup`,
+            customer: {
+                fullName: name,
+                phoneNumber: phone,
+            }
+        });
+
+        window.location.href = `${window.location.origin}/accounts/signup?identityVerificationId=${response?.identityVerificationId}`;
     };
     
     const handleSignup = async () => {
@@ -117,7 +153,7 @@ const SignUp : React.FC = () => {
         }
         setIsLoading(true);
         try {
-            const signupData: any = {email, name, mobile: phone, password};
+            const signupData: any = {email, name, mobile: phone, password, identity_code: identityCode};
             if (referralCode.trim()) {
                 signupData.referral_code = referralCode.trim();
             }

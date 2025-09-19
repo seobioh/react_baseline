@@ -14,6 +14,7 @@ import SignupPage from '../pages/Accounts/SignupPage';
 import KakaoPage from '../pages/Accounts/KakaoPage';
 import NaverPage from '../pages/Accounts/NaverPage';
 import GooglePage from '../pages/Accounts/GooglePage';
+import PortOnePage from '../pages/Accounts/PortOnePage';
 import ResetPasswordPage from '../pages/Accounts/ResetPasswordPage';
 import ChangePasswordPage from '../pages/Accounts/ChangePasswordPage';
 import AccountEditPage from '../pages/Accounts/AccountEditPage';
@@ -124,6 +125,13 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <GooglePage /> },
+        ],
+    },
+    {
+        path: '/accounts/portone',
+        element: <Layout />,
+        children: [
+            { index: true, element: <PortOnePage /> },
         ],
     },
     {

@@ -70,6 +70,10 @@ interface SocialLoginRequest {
   state?: string;
 }
 
+interface PortOneIdentityRequest {
+  identity_code: string;
+}
+
 interface AccountState {
   user: User | null;
   token: Token | null;
@@ -92,6 +96,8 @@ interface AccountState {
   kakaoLogin: (data: SocialLoginRequest) => Promise<void>;
   googleLogin: (data: SocialLoginRequest) => Promise<void>;
   naverLogin: (data: SocialLoginRequest) => Promise<void>;
+  
+  portOneIdentity: (data: PortOneIdentityRequest) => Promise<void>;
   
   setLoading: (loading: boolean) => void;
   checkTokenValidityandRefresh: () => Promise<boolean>;
@@ -470,6 +476,37 @@ export const useAccountStore = create<AccountState>()(
         }
       },
 
+      portOneIdentity: async (data: PortOneIdentityRequest) => {
+        const { token } = useAccountStore.getState();
+        if (!token?.access_token) throw new Error('인증이 필요합니다.');
+        set({ isLoading: true });
+
+        try {
+          const response = await fetch(`${BASE_URL}/accounts/portone`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${token.access_token}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.status >= 200 && response.status < 300 && result.data?.user) {
+            set({
+              user: result.data.user,
+              isLoading: false
+            });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || 'PortOne 본인인증에 실패했습니다.');
+          }
+        } catch (error) {
+          set({ isLoading: false });
+          throw error;
+        }
+      },
 
       setLoading: (loading: boolean) => {
         set({ isLoading: loading });

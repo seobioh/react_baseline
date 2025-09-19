@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAccountStore } from '../../../stores/accountStore';
+import PortOne from '@portone/browser-sdk/v2';
 import arrowForwardIcon from '../../../assets/icons/light/arrow_forward.svg';
 import './AccountSetting.css';
 
@@ -18,9 +19,19 @@ const AccountSetting: React.FC = () => {
         navigate('/users/coupons');
     };
 
-    const handleIdentityVerification = () => {
-        // TODO: 본인 인증 페이지로 이동
-        alert('본인 인증 기능은 준비 중입니다.');
+    const handleIdentityVerification = async () => {
+        const response = await PortOne.requestIdentityVerification({
+            storeId: import.meta.env.VITE_PORTONE_STORE_ID,
+            identityVerificationId: `identity-verification-${crypto.randomUUID()}`,
+            channelKey: import.meta.env.VITE_PORTONE_CHANNEL_KEY,
+            redirectUrl: `${window.location.origin}/accounts/portone`,
+            customer: {
+                fullName: user?.name,
+                phoneNumber: user?.mobile,
+            }
+        });
+
+        navigate(`/accounts/portone?identityVerificationId=${response?.identityVerificationId}`);
     };
         
     const handleReferralStatus = () => {
