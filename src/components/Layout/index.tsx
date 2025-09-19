@@ -9,9 +9,10 @@ import "./Layout.css";
 
 interface LayoutProps {
   isPadding?: boolean;
+  backgroundColor?: string;
 }
 
-function Layout({ isPadding = true }: LayoutProps) {
+function Layout({ isPadding = true , backgroundColor = '' }: LayoutProps) {
   return (
     <div className="layout">
       <div className="layout-container">
@@ -19,7 +20,12 @@ function Layout({ isPadding = true }: LayoutProps) {
         <Navbar />
         <Space8px />
         <Divider />
-        <Body style={!isPadding ? { padding: 0 } : undefined}>
+        <Body 
+          backgroundColor={backgroundColor && backgroundColor !== 'null' ? backgroundColor : undefined}
+          style={{
+            ...(!isPadding ? { padding: 0 } : {})
+          }}
+        >
           <Outlet />
         </Body>
         <Footer />
