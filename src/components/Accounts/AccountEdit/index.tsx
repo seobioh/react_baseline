@@ -46,13 +46,18 @@ const AccountEdit : React.FC = () => {
         e.preventDefault();
         setIsLoading(true);     
         try {
-            const birthday = `${formData.birthYear}-${formData.birthMonth.padStart(2, '0')}-${formData.birthDay.padStart(2, '0')}`;
-            const submitData = {
+            const submitData: any = {
                 name: formData.name,
                 mobile: formData.mobile.replace(/-/g, ''),
-                birthday: birthday,
                 gender: formData.gender
             };
+            
+            // birthday가 모두 입력되었을 때만 포함
+            if (formData.birthYear && formData.birthMonth && formData.birthDay) {
+                const birthday = `${formData.birthYear}-${formData.birthMonth.padStart(2, '0')}-${formData.birthDay.padStart(2, '0')}`;
+                submitData.birthday = birthday;
+            }
+            
             await updateAccount(submitData);
             alert('계정 정보가 성공적으로 수정되었습니다.');
             navigate('/accounts');
