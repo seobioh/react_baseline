@@ -25,11 +25,13 @@
 }
 
 .nav-item {
+    padding: 2px 0;
     transition: color 0.2s ease;
     cursor: pointer;
 
     font-size: inherit;
     color: #848484;
+    line-height: 1;
     text-decoration: none;
 }
 

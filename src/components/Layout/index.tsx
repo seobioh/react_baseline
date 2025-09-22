@@ -8,11 +8,11 @@ import Footer from "../Footer";
 import "./Layout.css";
 
 interface LayoutProps {
+  isBody?: boolean;
   isPadding?: boolean;
-  backgroundColor?: string;
 }
 
-function Layout({ isPadding = true , backgroundColor = '' }: LayoutProps) {
+function Layout({ isPadding = true , isBody = true }: LayoutProps) {
   return (
     <div className="layout">
       <div className="layout-container">
@@ -20,14 +20,17 @@ function Layout({ isPadding = true , backgroundColor = '' }: LayoutProps) {
         <Navbar />
         <Space8px />
         <Divider />
-        <Body 
-          backgroundColor={backgroundColor && backgroundColor !== 'null' ? backgroundColor : undefined}
-          style={{
-            ...(!isPadding ? { padding: 0 } : {})
-          }}
-        >
+        {isBody ? (
+          <Body 
+            style={{
+              ...(!isPadding ? { padding: 0 } : {}),
+            }}
+          >
+            <Outlet />
+          </Body>
+        ) : (
           <Outlet />
-        </Body>
+        )}
         <Footer />
       </div>
     </div>

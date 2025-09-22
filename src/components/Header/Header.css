@@ -35,7 +35,7 @@
 @media (min-width: 768px) {
     .header-container {
         max-width: 1440px;
-        height: 60px;
+        height: 56px;
         padding: 0 24px;
         margin: 0 auto;
     }
