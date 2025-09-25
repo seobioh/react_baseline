@@ -12,11 +12,11 @@ const GooglePage: React.FC = () => {
         const handleGoogleLogin = async () => {
             try {
                 const code = searchParams.get('code');
-                const state = searchParams.get('state');
                 if (!code) {
                     throw new Error('인증 코드가 없습니다.');
                 }
-                await googleLogin({ code, state: state || undefined });
+                const encodedCode = encodeURIComponent(code);
+                await googleLogin({ code: encodedCode });
                 window.location.href = '/accounts';
             } catch (error) {
                 console.error('구글 로그인 실패:', error);

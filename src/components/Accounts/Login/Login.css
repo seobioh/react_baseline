@@ -96,6 +96,16 @@
     background-color: #fff3a0;
 }
 
+.google-login-button {
+    background-color: #f9f8fa;
+    
+    color: #000;
+}
+
+.google-login-button:hover:not(:disabled) {
+    background-color: #e0e0e0;
+}
+
 .login-option-container {
     display: flex;
     flex-direction: row;

@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { useAccountStore } from './accountStore';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -46,7 +47,6 @@ export const useUserStore = create<UserState>()((set) => ({
   isLoading: false,
 
   getReferralStatus: async () => {
-    const { useAccountStore } = await import('./accountStore');
     const { token } = useAccountStore.getState();
     
     if (!token?.access_token) throw new Error('인증이 필요합니다.');
@@ -78,7 +78,6 @@ export const useUserStore = create<UserState>()((set) => ({
   },
 
   getPointTransactions: async () => {
-    const { useAccountStore } = await import('./accountStore');
     const { token } = useAccountStore.getState();
     
     if (!token?.access_token) throw new Error('인증이 필요합니다.');
@@ -110,7 +109,6 @@ export const useUserStore = create<UserState>()((set) => ({
   },
 
   addPointCoupon: async (couponCode: string) => {
-    const { useAccountStore } = await import('./accountStore');
     const { token } = useAccountStore.getState();
     
     if (!token?.access_token) throw new Error('인증이 필요합니다.');
@@ -139,7 +137,6 @@ export const useUserStore = create<UserState>()((set) => ({
   },
 
   addReferralCode: async (referralCode: string) => {
-    const { useAccountStore } = await import('./accountStore');
     const { token } = useAccountStore.getState();
     
     if (!token?.access_token) throw new Error('인증이 필요합니다.');

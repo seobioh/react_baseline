@@ -23,7 +23,24 @@ const Login : React.FC = () => {
         const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code`;
         window.location.href = kakaoAuthUrl;
     };
-    
+
+    const handleGoogleLogin = () => {
+        const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || 'your_google_client_id';
+        const redirectUri = import.meta.env.VITE_GOOGLE_REDIRECT_URI || 'your_google_redirect_uri';
+        
+        const params = new URLSearchParams({
+            client_id: clientId,
+            redirect_uri: redirectUri,
+            response_type: 'code',
+            scope: 'openid email profile',
+            access_type: 'offline',
+            prompt: 'consent'
+        });
+        
+        const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+        window.location.href = googleAuthUrl;
+    };
+
     const handleLogin = async () => {
         if (!isFormValid) return;
         try {
@@ -57,6 +74,7 @@ const Login : React.FC = () => {
                     </Link>
                 </div>
                 <button className="kakao-login-button" onClick = {handleKakaoLogin}>카카오 로그인</button>
+                <button className="google-login-button" onClick = {handleGoogleLogin}>구글 로그인</button>
             </div>
         </div>
     )
