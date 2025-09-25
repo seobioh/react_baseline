@@ -65,6 +65,12 @@ interface VerificationCheckRequest {
   verification_code: string;
 }
 
+interface ResetPasswordRequest {
+  target?: string;
+  verification_code?: string;
+  identity_code?: string;
+}
+
 interface SocialLoginRequest {
   code: string;
   state?: string;
@@ -92,6 +98,7 @@ interface AccountState {
   checkEmail: (data: CheckEmailRequest) => Promise<boolean>;
   sendVerificationCode: (data: VerificationRequest) => Promise<void>;
   verifyCode: (data: VerificationCheckRequest) => Promise<void>;
+  resetPassword: (data: ResetPasswordRequest) => Promise<void>;
   
   kakaoLogin: (data: SocialLoginRequest) => Promise<void>;
   googleLogin: (data: SocialLoginRequest) => Promise<void>;
@@ -344,6 +351,32 @@ export const useAccountStore = create<AccountState>()(
         set({ isLoading: true });
 
         try {
+          const response = await fetch(`${BASE_URL}/accounts/verify-code`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.status >= 200 && response.status < 300) {
+            set({ isLoading: false });
+          } else {
+            set({ isLoading: false });
+            throw new Error(result.message || '인증번호 확인에 실패했습니다.');
+          }
+        } catch (error) {
+          set({ isLoading: false });
+          throw error;
+        }
+      },
+
+      resetPassword: async (data: ResetPasswordRequest) => {
+        set({ isLoading: true });
+
+        try {
           const response = await fetch(`${BASE_URL}/accounts/reset-password`, {
             method: 'POST',
             headers: {
@@ -373,6 +406,7 @@ export const useAccountStore = create<AccountState>()(
           throw error;
         }
       },
+
 
       kakaoLogin: async (data: SocialLoginRequest) => {
         set({ isLoading: true });

@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAccountStore } from '../../../stores/accountStore';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import PortOne from '@portone/browser-sdk/v2';
 import './ResetPassword.css';
-import { useNavigate } from 'react-router-dom';
 
 type TabType = 'identity' | 'email';
 
@@ -16,9 +17,25 @@ const ResetPassword : React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [timeLeft, setTimeLeft] = useState(0);
     const [timerActive, setTimerActive] = useState(false);
+    const [searchParams] = useSearchParams();
 
+    const { sendVerificationCode, resetPassword, token } = useAccountStore();
     const navigate = useNavigate();
-    const { sendVerificationCode, verifyCode, token } = useAccountStore();
+    
+    useEffect(() => {
+        const identityVerificationId = searchParams.get('identityVerificationId');
+        if (identityVerificationId) {
+            setIsLoading(true);
+            resetPassword({
+                identity_code: identityVerificationId
+            }).then(() => {
+                navigate('/accounts/change-password');
+            }).catch(() => {
+                alert('본인인증에 실패했습니다.');
+                setIsLoading(false);
+            });
+        }
+    }, [searchParams, resetPassword, navigate]);
     
     useEffect(() => {
         let interval: number | null = null;
@@ -72,7 +89,7 @@ const ResetPassword : React.FC = () => {
         }
         setIsLoading(true);
         try {
-            await verifyCode({
+            await resetPassword({
                 target: email,
                 verification_code: verificationCode
             });
@@ -82,6 +99,17 @@ const ResetPassword : React.FC = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleIdentityVerification = async () => {
+        const response = await PortOne.requestIdentityVerification({
+            storeId: import.meta.env.VITE_PORTONE_STORE_ID,
+            identityVerificationId: `identity-verification-${crypto.randomUUID()}`,
+            channelKey: import.meta.env.VITE_PORTONE_CHANNEL_KEY,
+            redirectUrl: `${window.location.origin}/accounts/reset-password`,
+        });
+
+        navigate(`/accounts/reset-password?identityVerificationId=${response?.identityVerificationId}`);
     };
 
     const renderHeader = () => (
@@ -108,7 +136,7 @@ const ResetPassword : React.FC = () => {
 
     const renderIdentitySection = () => (
         <div className="reset-password-section">
-            <button className="reset-password-button valid" disabled={isLoading}>
+            <button className="reset-password-button valid" onClick={handleIdentityVerification} disabled={isLoading} >
                 {isLoading ? '처리 중...' : '본인인증하기'}
             </button>
         </div>
