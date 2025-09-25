@@ -62,7 +62,7 @@ const DetailTile: React.FC<DetailTileProps> = ({
                         {subTitle && <p className="detail-tile-container-sub-title">{subTitle}</p>}
                     </div>
                     <div className="detail-tile-top-section right">
-                        <p className={`${isHot ? 'hot' : isNew ? 'new' : ''}`}>{isHot ? 'HOT' : isNew ? 'NEW' : ''}</p>
+                        <p className={`${isNew ? 'new' : isHot ? 'hot' : ''}`}>{isNew ? 'NEW' : isHot ? 'HOT' : ''}</p>
                     </div>
                 </div>
                 <div className="detail-tile-middle">
