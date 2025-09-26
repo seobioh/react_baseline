@@ -25,7 +25,7 @@ import CouponPage from '../pages/Users/CouponPage';
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Layout />,
+        element: <Layout isBody={false} />,
         children: [
             { index: true, element: <HomePage /> },
         ],

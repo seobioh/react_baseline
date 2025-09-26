@@ -1,3 +1,12 @@
+.home-page {
+    width: 100%;
+}
+
+.home-page-section {
+    width: 100%;
+    padding: 0 12px;
+}
+
 .home-page a {
     display: block;
 
@@ -80,6 +89,12 @@
 }
 
 @media (min-width: 1280px) {
+    .home-page-section{
+        padding: 0 24px;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
     .home-page-tile-list > * {
         flex: 0 0 calc(100% / 4.1 - 12px);
         

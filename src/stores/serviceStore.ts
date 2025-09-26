@@ -45,6 +45,7 @@ interface Ad {
   mobile_img?: string;
   desktop_img?: string;
   detail_img?: string;
+  background_img?: string;
   description?: string;
   link?: string;
   start_date: string;

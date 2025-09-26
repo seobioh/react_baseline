@@ -6,6 +6,7 @@ interface AdData {
     title?: string;
     subTitleColor?: string;
     titleColor?: string;
+    backgroundImage?: string;
     imageDesktop: string;
     imageMobile: string;
     isClickable?: boolean;
@@ -55,10 +56,7 @@ const AdTile: React.FC<AdTileProps> = ({
     useEffect(() => {
         const updateSlideWidth = () => {
             if (containerRef.current) {
-                const width = containerRef.current.offsetWidth;
-                const gap = 16;
-                const newSlideWidth = (width + gap) / width * 100;
-                setSlideWidth(newSlideWidth);
+                setSlideWidth(100);
             }
         };
 
@@ -194,7 +192,8 @@ const AdTile: React.FC<AdTileProps> = ({
                 {ads.map((ad, index) => {
                     const adTileStyle = {
                         ...(ad.subTitleColor && { '--ad-tile-subtitle-color': ad.subTitleColor }),
-                        ...(ad.titleColor && { '--ad-tile-title-color': ad.titleColor })
+                        ...(ad.titleColor && { '--ad-tile-title-color': ad.titleColor }),
+                        ...(ad.backgroundImage && { '--ad-tile-background-image': ad.backgroundImage })
                     } as React.CSSProperties;
 
                     // radius 설정 - 기본값은 true
@@ -212,7 +211,6 @@ const AdTile: React.FC<AdTileProps> = ({
                         >
                             <div className="ad-tile-image" style={{
                                 backgroundImage: `url(${getImageUrl(ad)})`,
-                                backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat'
                             }}></div>
