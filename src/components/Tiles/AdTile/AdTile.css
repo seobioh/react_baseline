@@ -9,6 +9,11 @@
     -ms-user-select: none;
     touch-action: manipulation;
     cursor: grab;
+    container-type: inline-size;
+}
+
+.ad-tile.no-radius {
+    border-radius: 0;
 }
 
 .ad-tile:active {
@@ -34,6 +39,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     touch-action: manipulation;
+}
+
+.ad-tile-container.no-radius {
+    border-radius: 0;
 }
 
 .ad-tile-container:last-child {
@@ -128,7 +137,7 @@
     background: rgba(255, 255, 255, 0.8);
 }
 
-@media (min-width: 769px) {
+@container (min-width: 769px) {
     .ad-tile-container {
         aspect-ratio: 4 / 1;
     }

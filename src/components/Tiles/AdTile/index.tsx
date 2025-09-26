@@ -9,6 +9,8 @@ interface AdData {
     imageDesktop: string;
     imageMobile: string;
     isClickable?: boolean;
+    isRadiusMobile?: boolean;
+    isRadiusDesktop?: boolean;
     onClick: () => void;
 }
 
@@ -38,20 +40,24 @@ const AdTile: React.FC<AdTileProps> = ({
     const currentAd = ads[currentAdIndex];
 
     useEffect(() => {
-        const checkScreenSize = () => {
-            setIsDesktop(window.innerWidth >= 768);
+        const updateContainerInfo = () => {
+            if (containerRef.current) {
+                const width = containerRef.current.offsetWidth;
+                setIsDesktop(width >= 768);
+            }
         };
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
+
+        updateContainerInfo();
+        window.addEventListener('resize', updateContainerInfo);
+        return () => window.removeEventListener('resize', updateContainerInfo);
     }, []);
 
     useEffect(() => {
         const updateSlideWidth = () => {
             if (containerRef.current) {
-                const containerWidth = containerRef.current.offsetWidth;
+                const width = containerRef.current.offsetWidth;
                 const gap = 16;
-                const newSlideWidth = (containerWidth + gap) / containerWidth * 100;
+                const newSlideWidth = (width + gap) / width * 100;
                 setSlideWidth(newSlideWidth);
             }
         };
@@ -159,10 +165,17 @@ const AdTile: React.FC<AdTileProps> = ({
 
     if (!currentAd) return null;
 
+    // 메인 컨테이너의 radius 설정 - 기본값은 true
+    const shouldShowRadiusMobile = currentAd.isRadiusMobile !== false;
+    const shouldShowRadiusDesktop = currentAd.isRadiusDesktop !== false;
+    const mainRadiusClass = isDesktop 
+        ? (shouldShowRadiusDesktop ? '' : 'no-radius') 
+        : (shouldShowRadiusMobile ? '' : 'no-radius');
+
     return (
         <div 
             ref={containerRef}
-            className={`ad-tile ${className}`}
+            className={`ad-tile ${mainRadiusClass} ${className}`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -184,10 +197,17 @@ const AdTile: React.FC<AdTileProps> = ({
                         ...(ad.titleColor && { '--ad-tile-title-color': ad.titleColor })
                     } as React.CSSProperties;
 
+                    // radius 설정 - 기본값은 true
+                    const shouldShowRadiusMobile = ad.isRadiusMobile !== false;
+                    const shouldShowRadiusDesktop = ad.isRadiusDesktop !== false;
+                    const radiusClass = isDesktop 
+                        ? (shouldShowRadiusDesktop ? '' : 'no-radius') 
+                        : (shouldShowRadiusMobile ? '' : 'no-radius');
+
                     return (
                         <div 
                             key={index}
-                            className="ad-tile-container"
+                            className={`ad-tile-container ${radiusClass}`}
                             style={adTileStyle}
                         >
                             <div className="ad-tile-image" style={{
