@@ -39,8 +39,6 @@ const HomePage: React.FC = () => {
                                 }
                             },
                             isClickable: ad.link ? true : false,
-                            isRadiusDesktop: false,
-                            isRadiusMobile: false,
                         }))
                     }
                 />

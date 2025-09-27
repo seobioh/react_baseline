@@ -9,9 +9,11 @@ interface AdData {
     backgroundImage?: string;
     imageDesktop: string;
     imageMobile: string;
+    aspectRatioMobile?: string;
+    aspectRatioDesktop?: string;
+    borderRadiusMobile?: string;
+    borderRadiusDesktop?: string;
     isClickable?: boolean;
-    isRadiusMobile?: boolean;
-    isRadiusDesktop?: boolean;
     onClick: () => void;
 }
 
@@ -163,17 +165,16 @@ const AdTile: React.FC<AdTileProps> = ({
 
     if (!currentAd) return null;
 
-    // 메인 컨테이너의 radius 설정 - 기본값은 true
-    const shouldShowRadiusMobile = currentAd.isRadiusMobile !== false;
-    const shouldShowRadiusDesktop = currentAd.isRadiusDesktop !== false;
-    const mainRadiusClass = isDesktop 
-        ? (shouldShowRadiusDesktop ? '' : 'no-radius') 
-        : (shouldShowRadiusMobile ? '' : 'no-radius');
+    const mainContainerStyle = {
+        ...(isDesktop && currentAd.borderRadiusDesktop && { borderRadius: currentAd.borderRadiusDesktop }),
+        ...(!isDesktop && currentAd.borderRadiusMobile && { borderRadius: currentAd.borderRadiusMobile })
+    } as React.CSSProperties;
 
     return (
         <div 
             ref={containerRef}
-            className={`ad-tile ${mainRadiusClass} ${className}`}
+            className={`ad-tile ${className}`}
+            style={mainContainerStyle}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -201,15 +202,12 @@ const AdTile: React.FC<AdTileProps> = ({
                     const adTileStyle = {
                         ...(ad.subTitleColor && { '--ad-tile-subtitle-color': ad.subTitleColor }),
                         ...(ad.titleColor && { '--ad-tile-title-color': ad.titleColor }),
-                        ...(ad.backgroundImage && { '--ad-tile-background-image': getBackgroundImageValue(ad.backgroundImage) })
+                        ...(ad.backgroundImage && { '--ad-tile-background-image': getBackgroundImageValue(ad.backgroundImage) }),
+                        ...(isDesktop && ad.aspectRatioDesktop && { '--ad-tile-aspect-ratio': ad.aspectRatioDesktop }),
+                        ...(!isDesktop && ad.aspectRatioMobile && { '--ad-tile-aspect-ratio': ad.aspectRatioMobile }),
+                        ...(isDesktop && ad.borderRadiusDesktop && { '--ad-tile-radius-desktop': ad.borderRadiusDesktop }),
+                        ...(!isDesktop && ad.borderRadiusMobile && { '--ad-tile-radius-mobile': ad.borderRadiusMobile })
                     } as React.CSSProperties;
-
-                    // radius 설정 - 기본값은 true
-                    const shouldShowRadiusMobile = ad.isRadiusMobile !== false;
-                    const shouldShowRadiusDesktop = ad.isRadiusDesktop !== false;
-                    const radiusClass = isDesktop 
-                        ? (shouldShowRadiusDesktop ? '' : 'no-radius') 
-                        : (shouldShowRadiusMobile ? '' : 'no-radius');
 
                     return (
                         <button 
@@ -229,7 +227,7 @@ const AdTile: React.FC<AdTileProps> = ({
                             }}
                         >
                             <div 
-                                className={`ad-tile-container ${radiusClass}`}
+                                className="ad-tile-container"
                                 style={adTileStyle}
                             >
                                 <div className="ad-tile-frame">
