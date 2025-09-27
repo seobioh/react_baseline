@@ -28,7 +28,7 @@
 
 .ad-tile-container {
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -38,6 +38,9 @@
     -ms-user-select: none;
     touch-action: manipulation;
     background-image: var(--ad-tile-background-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .ad-tile-container.no-radius {

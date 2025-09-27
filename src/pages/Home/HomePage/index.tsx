@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useServiceStore } from '../../../stores/serviceStore';
 import { MainTitle, SubTitle } from '../../../components/Text';
-import { SpaceMedium, SpaceSmall, SpaceXXXLarge } from '../../../components/Space';
+import { SpaceMedium, SpaceSmall, SpaceXLarge, SpaceXXXLarge } from '../../../components/Space';
 import AdTile from '../../../components/Tiles/AdTile';
 import ButtonTile from '../../../components/Tiles/ButtonTile';
 import { DetailTile } from '../../../components/Tiles/DetailTile';
@@ -53,7 +53,9 @@ const HomePage: React.FC = () => {
                     <ButtonTile title="스포츠카 구독" subTitle="스릴 넘치는" backgroundImage={sampleImage2} aspectRatioDesktop="1/1" onClick={() => navigate('/products')} backgroundColor="#0974F2" titleColor="#fff" />
                     <ButtonTile title="업무용 차량 구독" subTitle="비즈니스맨을 위한" backgroundImage={sampleImage3} aspectRatioDesktop="2/1" onClick={() => navigate('/products')} backgroundColor="#FA4659" titleColor="#fff" />
                 </div>
-                <SpaceXXXLarge />
+                <SpaceXLarge />
+                <button className="home-page-search">차량 검색</button>
+                <div className="home-page-space" />
                 <MainTitle> 신규 차량을 확인해 보세요. </MainTitle>
                 <SubTitle> 이번 주에 새롭게 입고된 차량들을 확인해 보세요. </SubTitle>
                 <SpaceSmall />

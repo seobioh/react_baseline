@@ -190,10 +190,18 @@ const AdTile: React.FC<AdTileProps> = ({
                 }}
             >
                 {ads.map((ad, index) => {
+                    const getBackgroundImageValue = (bgImage?: string) => {
+                        if (!bgImage) return undefined;
+                        if (bgImage.startsWith('url(') || bgImage.startsWith('linear-gradient') || bgImage.startsWith('radial-gradient') || bgImage.startsWith('#') || bgImage.startsWith('rgb') || bgImage.startsWith('rgba')) {
+                            return bgImage;
+                        }
+                        return `url(${bgImage})`;
+                    };
+
                     const adTileStyle = {
                         ...(ad.subTitleColor && { '--ad-tile-subtitle-color': ad.subTitleColor }),
                         ...(ad.titleColor && { '--ad-tile-title-color': ad.titleColor }),
-                        ...(ad.backgroundImage && { '--ad-tile-background-image': ad.backgroundImage })
+                        ...(ad.backgroundImage && { '--ad-tile-background-image': getBackgroundImageValue(ad.backgroundImage) })
                     } as React.CSSProperties;
 
                     // radius 설정 - 기본값은 true

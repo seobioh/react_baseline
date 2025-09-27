@@ -7,6 +7,29 @@
     padding: 0 12px;
 }
 
+.home-page-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    border: 1px solid #DDDDDD;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.home-page-space {
+    height: 24px;
+}
+
 .home-page a {
     display: block;
 
@@ -93,6 +116,10 @@
         padding: 0 24px;
         max-width: 1440px;
         margin: 0 auto;
+    }
+
+    .home-page-space {
+        height: 64px;
     }
 
     .home-page-tile-list > * {

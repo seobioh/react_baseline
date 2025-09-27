@@ -111,7 +111,7 @@
 
 .detail-tile-container-price {
     color: var(--detail-tile-price-color, #000);
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .detail-tile-top-section.right .hot {
