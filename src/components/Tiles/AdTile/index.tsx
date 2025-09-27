@@ -212,38 +212,40 @@ const AdTile: React.FC<AdTileProps> = ({
                         : (shouldShowRadiusMobile ? '' : 'no-radius');
 
                     return (
-                        <div 
+                        <button 
                             key={index}
-                            className={`ad-tile-container ${radiusClass}`}
-                            style={adTileStyle}
+                            className={`ad-tile-button ${ad.isClickable === false ? 'disabled' : ''}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                if (isDragging || hasDragged) {
+                                    return;
+                                }
+                                
+                                if (ad.isClickable !== false) {
+                                    ad.onClick();
+                                }
+                            }}
                         >
-                            <div className="ad-tile-image" style={{
-                                backgroundImage: `url(${getImageUrl(ad)})`,
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat'
-                            }}></div>
-
-                            <button 
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    
-                                    if (isDragging || hasDragged) {
-                                        return;
-                                    }
-                                    
-                                    if (ad.isClickable !== false) {
-                                        ad.onClick();
-                                    }
-                                }}
-                                className={`ad-tile-button ${ad.isClickable === false ? 'disabled' : ''}`}
+                            <div 
+                                className={`ad-tile-container ${radiusClass}`}
+                                style={adTileStyle}
                             >
-                                <div className="ad-tile-content">
-                                    <p className="ad-tile-subtitle">{ad.subTitle}</p>
-                                    <p className="ad-tile-title">{ad.title}</p>
+                                <div className="ad-tile-frame">
+                                    <div className="ad-tile-image" style={{
+                                        backgroundImage: `url(${getImageUrl(ad)})`,
+                                        backgroundPosition: 'center',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}></div>
+                                    
+                                    <div className="ad-tile-content">
+                                        <p className="ad-tile-subtitle">{ad.subTitle}</p>
+                                        <p className="ad-tile-title">{ad.title}</p>
+                                    </div>
                                 </div>
-                            </button>
-                        </div>
+                            </div>
+                        </button>
                     );
                 })}
             </div>
