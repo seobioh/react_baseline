@@ -167,13 +167,3 @@
         height: 8px;
     }
 }
-
-@container (min-width: 1440px) {
-    .ad-tile-container {
-        height: 360px;
-    }
-
-    .ad-tile-content {
-        height: 360px;
-    }
-}
