@@ -21,6 +21,8 @@ import AccountEditPage from '../pages/Accounts/AccountEditPage';
 import PointTransactionPage from '../pages/Users/PointTransactionPage';
 import ReferralPage from '../pages/Users/ReferralPage';
 import CouponPage from '../pages/Users/CouponPage';
+import OrderSuccessPage from '../pages/Orders/OrderSuccessPage';
+import OrderFailPage from '../pages/Orders/OrderFailPage';
 
 const router = createBrowserRouter([
     {
@@ -175,6 +177,20 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <CouponPage /> },
+        ],
+    },
+    {
+        path: '/orders/success',
+        element: <Layout />,
+        children: [
+            { index: true, element: <OrderSuccessPage /> },
+        ],
+    },
+    {
+        path: '/orders/fail',
+        element: <Layout />,
+        children: [
+            { index: true, element: <OrderFailPage /> },
         ],
     },
 ]);

@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Header";
-import Navbar from "../Navbar";
-import { Space8px } from "../Space";
+import { Header2 } from "../Header";
 import Divider from "../Divider";
 import Body from "../Body";
 import Footer from "../Footer";
@@ -16,9 +14,7 @@ function Layout({ isPadding = true , isBody = true }: LayoutProps) {
   return (
     <div className="layout">
       <div className="layout-container">
-        <Header />
-        <Navbar />
-        <Space8px />
+        <Header2 />
         <Divider />
         {isBody ? (
           <Body 

@@ -1,0 +1,25 @@
+.order-fail-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.order-fail-page img {
+    vertical-align: center;
+
+    width: 96px;
+    height: 96px;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(4000%) hue-rotate(0deg) brightness(90%) contrast(130%);
+}
+
+.order-fail-page button {
+    width: 50%;
+    height: 48px;
+    border-radius: 24px;
+    background-color: #f8f9fa;
+
+    color: #000;
+}

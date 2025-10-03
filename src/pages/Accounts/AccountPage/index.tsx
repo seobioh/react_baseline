@@ -20,8 +20,6 @@ const AccountPage: React.FC = () => {
                     </div>
                 </div>
                 <div className="account-page-space"></div>
-                <div className="account-page-divider"></div>
-                <div className="account-page-space"></div>
                 <div className="account-page-right-section">
                     <div className="account-page-subscription">
                         <div className="account-page-subscription-button" >
@@ -47,8 +45,15 @@ const AccountPage: React.FC = () => {
                                         {
                                             container: (
                                                 <div className="account-page-subscription-info">
-                                                    <h4>BMW</h4>
-                                                    <h3>528i</h3>
+                                                    <div className="account-page-subscription-info-top">
+                                                        <div className="account-page-subscription-info-top-left">
+                                                            <h4>BMW</h4>
+                                                            <h3>
+                                                                528i
+                                                            </h3>
+                                                        </div>
+                                                        <button>해지하기</button>
+                                                    </div>
                                                     <img src={sampleImage} alt="528i" />
                                                     <p className="account-page-subscription-info-date">2025.01.01~2025.01.01</p>
                                                     <h3 className="account-page-subscription-info-date" style={{ color: '#6dd400' }}>
@@ -61,8 +66,15 @@ const AccountPage: React.FC = () => {
                                         {
                                             container: (
                                                 <div className="account-page-subscription-info">
-                                                    <h4>BMW</h4>
-                                                    <h3>528i</h3>
+                                                    <div className="account-page-subscription-info-top">
+                                                        <div className="account-page-subscription-info-top-left">
+                                                            <h4>BMW</h4>
+                                                            <h3>
+                                                                528i
+                                                            </h3>
+                                                        </div>
+                                                        <button>해지하기</button>
+                                                    </div>
                                                     <img src={sampleImage} alt="528i" />
                                                     <p className="account-page-subscription-info-date">2025.01.01~2025.01.01</p>
                                                     <h3 className="account-page-subscription-info-date" style={{ color: '#6dd400' }}>
@@ -88,8 +100,15 @@ const AccountPage: React.FC = () => {
                                         {
                                             container: (
                                                 <div className="account-page-subscription-info">
-                                                    <h4>BMW</h4>
-                                                    <h3>528i</h3>
+                                                    <div className="account-page-subscription-info-top">
+                                                        <div className="account-page-subscription-info-top-left">
+                                                            <h4>BMW</h4>
+                                                            <h3>
+                                                                528i
+                                                            </h3>
+                                                        </div>
+                                                        <button>취소하기</button>
+                                                    </div>
                                                     <img src={sampleImage} alt="528i" />
                                                     <p className="account-page-subscription-info-date">2025.01.01~2025.01.01</p>
                                                     <h3 className="account-page-subscription-info-date" style={{ color: '#6dd400' }}>
@@ -102,8 +121,15 @@ const AccountPage: React.FC = () => {
                                         {
                                             container: (
                                                 <div className="account-page-subscription-info">
-                                                    <h4>BMW</h4>
-                                                    <h3>528i</h3>
+                                                    <div className="account-page-subscription-info-top">
+                                                        <div className="account-page-subscription-info-top-left">
+                                                            <h4>BMW</h4>
+                                                            <h3>
+                                                                528i
+                                                            </h3>
+                                                        </div>
+                                                        <button>취소하기</button>
+                                                    </div>
                                                     <img src={sampleImage} alt="528i" />
                                                     <p className="account-page-subscription-info-date">2025.01.01~2025.01.01</p>
                                                     <h3 className="account-page-subscription-info-date" style={{ color: '#6dd400' }}>

@@ -17,6 +17,16 @@
     .body-container {
         align-items: center;
 
+        max-width: 1280px;
+        padding: 24px 24px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .body-container {
+        align-items: center;
+
         max-width: 1440px;
         padding: 24px 24px;
         margin: 0 auto;
