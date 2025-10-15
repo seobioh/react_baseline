@@ -161,9 +161,6 @@ const ImageTile: React.FC<ImageTileProps> = ({
                         >
                             <div className="image-tile-image" style={{
                                 backgroundImage: `url(${getImageUrl(image)})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                backgroundRepeat: 'no-repeat'
                             }}></div>
                         </div>
                     );

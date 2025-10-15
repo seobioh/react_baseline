@@ -1,3 +1,5 @@
+@import '../../../assets/colors/colors.css';
+
 .account-info {
     display: flex;
     flex-direction: column;
@@ -16,7 +18,7 @@
     width: 100%;
     padding: 16px 16px;
     box-sizing: border-box;
-    border: 0.2px solid #ddd;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: #f8f9fa;
 }
@@ -24,7 +26,7 @@
 .account-info-container h3 {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     line-height: 1;
     font-size: 16px;
 }
@@ -32,7 +34,7 @@
 .account-info-container p {
     margin: 0;
 
-    color: #848484;
+    color: var(--text-secondary);
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
@@ -60,7 +62,7 @@
 
     height: 72px;
     width: 1px;
-    background-color: #ddd;
+    background-color: var(--border-primary);
 }
 
 .account-info-content {
@@ -121,13 +123,14 @@
     padding: 8px 8px;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: #8cff20;
+    background-color: var(--button-background-primary);
     cursor: pointer;
     transition: all 0.2s ease;
+
 }
 
 .account-info-point-section p {
-    color: #000;
+    color: var(--button-text-primary);
     font-size: 12px;
     font-weight: 600;
 }
@@ -154,23 +157,23 @@
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
-    background-color: #7ae600;
+    background-color: var(--button-background-secondary);
     cursor: pointer;
     transition: all 0.2s ease;
 
-    color: #000;
+    color: var(--button-text-secondary);
     font-size: 12px;
     font-weight: 600;
 }
 
 .account-info-code-exchange:hover {
-    background-color: #5bb800;
+    background-color: var(--button-background-secondary-hover);
 }
 
 .account-info-code-exchange:active {
     transform: translateY(1px);
 
-    background-color: #5bb800;
+    background-color: var(--button-background-secondary-hover);
 }
 
 @media (min-width: 768px) {

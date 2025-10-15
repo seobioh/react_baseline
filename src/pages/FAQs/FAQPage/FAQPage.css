@@ -1,3 +1,5 @@
+@import '../../../assets/colors/colors.css';
+
 .faq-page-tile-list-empty {
     display: flex;
     justify-content: center;
@@ -6,7 +8,7 @@
     width: 100%;
     height: 200px;
 
-    color: #666;
+    color: var(--text-secondary);
     font-size: 16px;
 }
 
@@ -31,7 +33,7 @@
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #f8f9fa;
+    background-color: var(--surface-tertiary);
     cursor: pointer;
     transition: background-color 0.2s ease;
 
@@ -39,20 +41,20 @@
 }
 
 .faq-page button:hover {
-    background-color: #f1f3f4;
+    background-color: var(--surface-tertiary);
 }
 
 .faq-page-button-text {
     flex: 1;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 14px;
     line-height: 1.4;
     font-weight: 500;
 }
 
 .faq-page-button-arrow {
-    color: #000;
+    color: var(--text-primary);
     font-size: 14px;
     line-height: 1.4;
     font-weight: 500;

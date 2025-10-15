@@ -1,3 +1,5 @@
+@import "../../../assets/colors/colors.css";
+
 .point-transaction {
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
 }
 
@@ -28,7 +30,7 @@
 .point-transaction-container h3 {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
     line-height: 1;
 }
@@ -36,7 +38,7 @@
 .point-transaction-container p {
     margin: 0;
 
-    color: #848484;
+    color: var(--text-tertiary);
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
@@ -47,7 +49,7 @@
 
     height: 1px;
     width: 90%;
-    background-color: #d9d9d9;
+    background-color: var(--border-primary);
 }
 
 .point-transaction-container input {
@@ -59,20 +61,20 @@
     padding: 8px 16px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     outline: none;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
 }
 
 .point-transaction-input-valid {
-    background-color: #f9f9f9;
+    background-color: var(--surface-secondary-hover);
     cursor: not-allowed;
 
-    color: #666;
+    color: var(--text-tertiary);
 }
 
 .point-transaction-input:-webkit-autofill,
@@ -98,24 +100,24 @@
 }
 
 .point-transaction-button.invalid {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 .point-transaction-button.valid {
-    background-color: #000;
+    background-color: var(--button-background-primary);
 
-    color: #fff;
+    color: var(--button-text-primary);
 }
 
 .point-transaction-button.valid:hover:not(:disabled) {
-    background-color: #333;
+    background-color: var(--button-background-primary-hover);
 }
 
 .point-transaction-button:disabled {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 }
 
@@ -138,7 +140,7 @@
     padding: 0 8px;
     box-sizing: border-box;
 
-    color: #000;
+    color: var(--text-primary);
 }
 
 .point-transaction th {

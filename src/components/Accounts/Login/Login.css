@@ -1,3 +1,5 @@
+@import '../../../assets/colors/colors.css';
+
 .login {
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
 }
 
@@ -26,19 +28,19 @@
     padding: 8px 16px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     outline: none;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
 }
 
 .login-input {
     background-color: transparent;
 
-    color: #000;
+    color: var(--text-primary);
 }
 
 .login-input:-webkit-autofill,
@@ -46,7 +48,7 @@
 .login-input:-webkit-autofill:focus,
 .login-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
-    -webkit-text-fill-color: #000 !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
     background-color: white !important;
 }
 
@@ -65,25 +67,27 @@
 }
 
 .login-button.invalid {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
     
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 .login-button.valid {
-    background-color: #000;
+    background-color: var(--button-background-primary);
     
-    color: #fff;
+    color: var(--button-text-primary);
 }
 
 .login-button.valid:hover:not(:disabled) {
-    background-color: #333;
+    background-color: var(--button-background-primary-hover);
 }
 
 .login-button:disabled {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
+
+    color: var(--button-text-primary-disabled);
 }
 
 .kakao-login-button {
@@ -118,27 +122,23 @@
     margin: 4px 0;
     box-sizing: border-box;
 
-    color: #848484;
+    color: var(--text-secondary);
     font-size: 12px;
     font-weight: 600;
 }
 
 .login-option-container a {
     text-decoration: none;
-    color: #666;
+    color: var(--text-secondary);
 }
 
 .login-option-container a:hover {
-    color: #848484;
+    color: var(--text-secondary);
 }
 
 .login-option-container h3 {
     font-size: 12px;
     font-weight: 400;
-}
-
-.login-option-container h3:not(:last-child) {
-    margin-right: 8px;
 }
 
 @media (min-width: 768px) {

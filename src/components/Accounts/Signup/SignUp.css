@@ -1,3 +1,5 @@
+@import '../../../assets/colors/colors.css';
+
 .sign-up {
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
 }
 
@@ -37,7 +39,7 @@
     margin: 4px 0;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: #f9f9f9;
+    background-color: var(--toggle-background-primary);
 }
 
 .sign-up-progress-step {
@@ -56,21 +58,21 @@
 }
 
 .sign-up-progress-step.active {
-    background-color: #8cff20;
+    background-color: var(--toggle-button-background-primary);
 
-    color: #000;
+    color: var(--toggle-button-text-primary-active);
 }
 
 .sign-up-progress-step.inactive {
-    background-color: #f9f9f9;
+    background-color: var(--toggle-button-background-primary-inactive);
 
-    color: #000;
+    color: var(--toggle-button-text-primary-inactive);
 }
 
 .sign-up-container h3 {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
     line-height: 1;
 }
@@ -78,7 +80,7 @@
 .sign-up-container p {
     margin: 0;
 
-    color: #848484;
+    color: var(--text-primary);
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
@@ -93,12 +95,12 @@
     padding: 8px 16px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     outline: none;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
 }
 
@@ -106,7 +108,7 @@
     background-color: #f9f9f9;
     cursor: not-allowed;
 
-    color: #666;
+    color: var(--text-secondary);
 }
 
 .sign-up-input:-webkit-autofill,
@@ -114,7 +116,7 @@
 .sign-up-input:-webkit-autofill:focus,
 .sign-up-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
-    -webkit-text-fill-color: #000 !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
     background-color: white !important;
 }
 
@@ -132,23 +134,25 @@
 }
 
 .sign-up-button.invalid {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 .sign-up-button.valid {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-background-primary);
+    color: var(--button-text-primary);
 }
 
 .sign-up-button.valid:hover:not(:disabled) {
-    background-color: #333;
+    background-color: var(--button-background-primary-hover);
 }
 
 .sign-up-button:disabled {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
+
+    color: var(--button-text-primary-disabled);
     cursor: not-allowed;
 }
 
@@ -196,21 +200,21 @@
 
     width: 20px;
     height: 20px;
-    border: 2px solid #c2c2c2;
+    border: 2px solid var(--checkbox-border-primary);
     border-radius: 4px;
-    background-color: transparent;
+    background-color: var(--checkbox-background-primary-disabled);
     transition: all 0.2s ease;
     flex-shrink: 0;
 }
 
 .sign-up-agreement-checkbox input[type="checkbox"]:checked + .sign-up-agreement-checkmark {
-    border-color: #000;
-    background-color: #000;
+    border-color: var(--checkbox-background-primary);
+    background-color: var(--checkbox-background-primary);
 }
 
 .sign-up-agreement-checkbox input[type="checkbox"]:checked + .sign-up-agreement-checkmark::after {
     content: '✓';
-    color: white;
+    color: var(--checkbox-text-primary);
     font-size: 12px;
     font-weight: bold;
 }
@@ -218,19 +222,9 @@
 .sign-up-agreement-text {
     flex: 1;
 
-    color: #000;
+    color: var(--checkbox-text-primary);
     font-size: 14px;
     line-height: 1.4;
-}
-
-.sign-up-agreement-required {
-    color: #ff4444;
-    font-weight: 600;
-}
-
-.sign-up-agreement-optional {
-    color: #666;
-    font-weight: 400;
 }
 
 @media (min-width: 768px) {

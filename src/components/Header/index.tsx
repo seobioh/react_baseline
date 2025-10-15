@@ -1,102 +1,29 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { ToggleButton } from "../Button";
-import { Space8px } from "../Space";
 import logoImage from "../../assets/images/light/logo.png";
+import userImage from "../../assets/icons/light/user.svg";
+import faqImage from "../../assets/icons/light/faq.svg";
+import megaphoneImage from "../../assets/icons/light/megaphone.svg";
+import globeImage from "../../assets/icons/light/globe.svg";
 import "./Header.css";
-import "./Header2.css";
 
-const menuItems = [
+const menuItemsMobile = [
     { id: 1, href: "/about", label: "소개" },
     { id: 2, href: "/products", label: "제품" },
     { id: 3, href: "/events", label: "이벤트" },
     { id: 4, href: "/faqs", label: "FAQ" },
     { id: 5, href: "/accounts", label: "계정" },
-    ];
-  
-interface NavLinksProps {
-    currentPath: string;
-    onNavigate: (href: string) => void;
-}
+  ];
 
-const NavLinks: React.FC<NavLinksProps> = ({ currentPath, onNavigate }) => (
-<div className="nav-link">
-    {menuItems.map((item) => (
-    <Link
-        key={item.id}
-        to={item.href}
-        className={currentPath.startsWith(item.href) ? "nav-item selected" : "nav-item"}
-        onClick={() => onNavigate(item.href)}
-    >
-        {item.label}
-    </Link>
-    ))}
-</div>
-);
 
-const Header: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<number>(0);
-    const location = useLocation();
-    const navigate = useNavigate();
+const menuItemsDesktop = [
+    { id: 1, href: "/about", label: "소개" },
+    { id: 2, href: "/products", label: "제품" },
+  ];
 
-    const handleNavigate = (href: string) => {
-        if (location.pathname !== href) {
-          navigate(href);
-        }
-      };
-    
-    const handleTabClick = (tabIndex: number) => {
-        setActiveTab(tabIndex);
-        if (tabIndex === 1) {
-            setActiveTab(0);
-            window.location.href = 'https://en.rerev.kr';
-        }
-    };
 
-    const tabOptions = ['KOR', 'ENG'];
-
-    return (
-        <>
-            <div className="header">
-                <div className="header-container">
-                    <div className="header-logo-container" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-                        <img src={logoImage} alt="REREV Logo" className="logo" />
-                    </div>
-                    <ToggleButton
-                        options={tabOptions}
-                        activeValue={activeTab}
-                        onToggle={handleTabClick}
-                        className="tab-toggle"
-                    />
-                </div>
-            </div>
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <NavLinks currentPath={location.pathname} onNavigate={handleNavigate} />
-                </div>
-            </nav>
-            <Space8px />
-        </>
-
-    )
-}
-
-const NavLinks2: React.FC<NavLinksProps> = ({ currentPath, onNavigate }) => (
-    <div className="nav-link-2">
-        {menuItems.map((item) => (
-        <Link
-            key={item.id}
-            to={item.href}
-            className={currentPath.startsWith(item.href) ? "nav-item-2 selected" : "nav-item-2"}
-            onClick={() => onNavigate(item.href)}
-        >
-            {item.label}
-        </Link>
-        ))}
-    </div>
-);
-      
-const Header2: React.FC = () => {
+const HeaderMobile: React.FC = () => {
     const [activeTab, setActiveTab] = useState<number>(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
@@ -113,7 +40,6 @@ const Header2: React.FC = () => {
         setActiveTab(tabIndex);
         if (tabIndex === 1) {
             setActiveTab(0);
-            window.location.href = 'https://en.rerev.kr';
         }
     };
 
@@ -131,7 +57,7 @@ const Header2: React.FC = () => {
         const handleClickOutside = (event: Event) => {
             if (isMenuOpen) {
                 const target = event.target as HTMLElement;
-                if (!target.closest('.navbar-2-hamburger-btn') && !target.closest('.navbar-2-sidebar')) {
+                if (!target.closest('.navbar-hamburger-btn') && !target.closest('.navbar-sidebar')) {
                     closeMenu();
                 }
             }
@@ -149,49 +75,108 @@ const Header2: React.FC = () => {
     }, [isMenuOpen]);
   
     return (
-        <div className="header-2">
-            <div className="header-2-container">
-                <div className="header-2-container-left">
-                    <div className="header-2-logo-container" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+        <div className="header">
+            <div className="header-container">
+                <div className="header-container-left">
+                    <div className="header-logo-container" onClick={() => navigate('/home')} style={{ cursor: 'pointer' }}>
                         <img src={logoImage} alt="REREV Logo" className="logo" />
                     </div>
-                    <div className="header-2-desktop">
-                        <NavLinks2 currentPath={location.pathname} onNavigate={handleNavigate} />
-                    </div>
                 </div>
-                <div className="header-2-container-right">
-                    <nav className="navbar-2">
-                        <div className="navbar-2-container">
-                            <div className="header-2-mobile">
-                                <button className="navbar-2-hamburger-btn" onClick={toggleMenu} aria-label="메뉴 열기/닫기">
-                                    <div className={`navbar-2-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-                                    <div className={`navbar-2-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-                                    <div className={`navbar-2-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
-                                </button>
-                            </div>
-                            <div className="header-2-desktop">
-                                <ToggleButton
-                                    options={tabOptions}
-                                    activeValue={activeTab}
-                                    onToggle={handleTabClick}
-                                    className="tab-toggle"
-                                />
-                            </div>
+                <div className="header-container-right">
+                    <nav className="navbar">
+                        <div className="navbar-container">
+                            <button className="navbar-hamburger-btn" onClick={toggleMenu} aria-label="메뉴 열기/닫기">
+                                <div className={`navbar-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
+                                <div className={`navbar-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
+                                <div className={`navbar-hamburger-line ${isMenuOpen ? 'open' : ''}`}></div>
+                            </button>
                         </div>
                     </nav>
                 </div>
-                <div className="header-2-mobile">
-                    <div className={`navbar-2-sidebar ${isMenuOpen ? 'open' : ''}`}>
-                        <div className="navbar-2-sidebar-content">
-                            <ToggleButton
-                                options={tabOptions}
-                                activeValue={activeTab}
-                                onToggle={handleTabClick}
-                                className="tab-toggle"
-                            />
-                            <NavLinks2 currentPath={location.pathname} onNavigate={handleNavigate} />
+                <div className={`navbar-sidebar ${isMenuOpen ? 'open' : ''}`}>
+                    <div className="navbar-sidebar-content">
+                        <ToggleButton
+                            options={tabOptions}
+                            activeValue={activeTab}
+                            onToggle={handleTabClick}
+                            className="tab-toggle"
+                        />
+                        <div className="nav-link">
+                            {menuItemsMobile.map((item) => (
+                            <Link
+                                key={item.id}
+                                to={item.href}
+                                className={location.pathname.startsWith(item.href) ? "nav-item selected" : "nav-item"}
+                                onClick={() => handleNavigate(item.href)}
+                            >
+                                {item.label}
+                            </Link>
+                            ))}
                         </div>
-                        <div className="navbar-2-sidebar-overlay" onClick={closeMenu}></div>
+                    </div>
+                    <div className="navbar-sidebar-overlay" onClick={closeMenu}></div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+const HeaderDesktop: React.FC = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleNavigate = (href: string) => {
+        if (location.pathname !== href) {
+          navigate(href);
+        }
+      };
+
+      return (
+        <div className="header">
+            <div className="header-container">
+                <div className="header-container-left">
+                    <div className="header-logo-container" onClick={() => navigate('/home')} style={{ cursor: 'pointer' }}>
+                        <img src={logoImage} alt="REREV Logo" className="logo" />
+                    </div>
+                    <div className="nav-link">
+                        {menuItemsDesktop.map((item) => (
+                        <Link
+                            key={item.id}
+                            to={item.href}
+                            className={location.pathname.startsWith(item.href) ? "nav-item selected" : "nav-item"}
+                            onClick={() => handleNavigate(item.href)}
+                        >
+                            {item.label}
+                        </Link>
+                        ))}
+                    </div>
+                </div>
+                <div className="header-container-right">
+                    <div className="header-container-icon">
+                        <button 
+                            className={`header-icon active`}
+                            onClick={() => navigate('/events')}
+                        >
+                            <img src={megaphoneImage} alt="Events" className="header-icon"/>
+                        </button>
+                        <button 
+                            className={`header-icon active`}
+                            onClick={() => navigate('/faqs')}
+                        >
+                            <img src={faqImage} alt="FAQ" className="header-icon circle"/>
+                        </button>
+                        <button 
+                            className={`header-icon active`}
+                        >
+                            <img src={globeImage} alt="Globe" className="header-icon circle"/>
+                        </button>
+                        <button 
+                            className={`header-icon active`}
+                            onClick={() => navigate('/accounts')}
+                        >
+                            <img src={userImage} alt="User" className="header-icon"/>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -199,4 +184,17 @@ const Header2: React.FC = () => {
     )
 }
 
-export { Header, Header2 };
+const Header: React.FC = () => {
+    return (
+        <>
+            <div className="header-mobile">
+                <HeaderMobile />
+            </div>
+            <div className="header-desktop">
+                <HeaderDesktop />
+            </div>
+        </>
+    )
+}
+
+export { Header };

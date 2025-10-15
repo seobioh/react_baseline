@@ -1,3 +1,5 @@
+@import "../../../assets/colors/colors.css";
+
 .referral-code-overlay {
   display: flex;
   align-items: center;
@@ -18,7 +20,7 @@
   max-width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: var(--surface-primary);
   border-radius: 4px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
@@ -37,13 +39,13 @@
   justify-content: space-between;
 
   padding: 16px 16px 12px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-primary);
 }
 
 .referral-code-header h3 {
   margin: 0;
 
-  color: #000;
+  color: var(--text-primary);
   font-size: 16px;
   font-weight: 600;
 }
@@ -62,7 +64,7 @@
   background: none;
   cursor: pointer;
 
-  color: #666;
+  color: var(--text-tertiary);
   font-size: 24px;
   line-height: 1;
 }
@@ -73,7 +75,7 @@
 }
 
 .referral-code-close:hover {
-  background-color: #f5f5f5;
+  background-color: var(--surface-secondary-hover);
 }
 
 .referral-code-content {
@@ -91,7 +93,7 @@
 .referral-code-content p {
   margin: 0;
     
-  color: #848484;
+  color: var(--text-tertiary);
   font-size: 12px;
   line-height: 1;
   font-weight: 400;
@@ -114,28 +116,28 @@
   padding: 12px 16px;
   margin: 4px 0;
   box-sizing: border-box;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-primary);
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--surface-primary);
   outline: none;
   transition: border-color 0.2s ease;
 
-  color: #000;
+  color: var(--text-primary);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .referral-code-input:focus {
-  border-color: #007bff;
+  border-color: var(--border-focus);
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
 }
 
 .referral-code-input:disabled {
-  background-color: #f5f5f5;
+  background-color: var(--surface-secondary-hover);
   cursor: not-allowed;
 
-  color: #666;
+  color: var(--text-tertiary);
 }
 
 .referral-code-message {
@@ -181,37 +183,37 @@
 }
 
 .referral-code-cancel {
-  border: 1px solid #e0e0e0;
-  background-color: #000;
+  border: 1px solid var(--border-primary);
+  background-color: var(--button-background-primary);
   
-  color: #fff;
+  color: var(--button-text-primary);
 }
 
 .referral-code-cancel:hover:not(:disabled) {
-  border-color: #ccc;
-  background-color: #333;
+  border-color: var(--border-primary);
+  background-color: var(--button-background-primary-hover);
 }
 
 .referral-code-submit {
-  background-color: #8cff20;
+  background-color: var(--button-background-primary);
 
-  color: #000;
+  color: var(--button-text-primary);
 }
 
 .referral-code-submit:hover:not(:disabled) {
-  background-color: #a8ff4d;
+  background-color: var(--button-background-primary-hover);
 }
 
 .referral-code-submit:disabled {
-  background-color: #c2c2c2;
+  background-color: var(--button-background-primary-disabled);
   cursor: not-allowed;
 }
 
 .referral-code-cancel:disabled {
-  background-color: #f5f5f5;
+  background-color: var(--button-background-primary-disabled);
   cursor: not-allowed;
 
-  color: #999;
+  color: var(--button-text-primary-disabled);
 }
 
 @media (min-width: 768px) {

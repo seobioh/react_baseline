@@ -1,6 +1,8 @@
+@import '../../assets/colors/colors.css';
+
 .divider {
     height: 0;
-    background-color: #f2f2f2;
+    background-color: var(--border-primary);
 }
 
 @media (min-width: 768px) {

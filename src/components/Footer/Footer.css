@@ -1,8 +1,10 @@
+@import '../../assets/colors/colors.css';
+
 .footer {
     display: flex;
     flex-direction: column;
     
-    background-color: #f5f5f5;
+    background-color: var(--footer-background-primary);
 }
 
 .footer-container {
@@ -14,7 +16,7 @@
     padding: 24px 12px;
     box-sizing: border-box;
 
-    color: #848484;
+    color: var(--footer-text-primary);
     font-size: 12px;
 }
 
@@ -32,12 +34,12 @@
 .footer-container nav a {
     transition: color 0.2s ease;
 
-    color: #848484;
+    color: var(--footer-text-primary);
     text-decoration: none;
 }
 
 .footer-container nav a:hover {
-    color: #333333;
+    color: var(--footer-text-primary);
     text-decoration: underline;
 }
 

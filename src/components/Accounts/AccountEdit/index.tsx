@@ -180,7 +180,7 @@ const AccountEdit : React.FC = () => {
                 >
                     {isLoading ? '수정 중...' : '수정'}
                 </button>
-                <button onClick={handleCancel}>취소</button>
+                <button onClick={handleCancel} className="account-edit-button-valid">취소</button>
             </div>
         </div>
     )

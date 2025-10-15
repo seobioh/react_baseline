@@ -1,3 +1,5 @@
+@import "../../../assets/colors/colors.css";
+
 .event-detail-page {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,7 @@
 .event-detail-page-description {
     width: 100%;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 12px;
     white-space: pre-line;
 }
@@ -20,23 +22,24 @@
     padding: 0 20px;
     border: none;
     border-radius: 4px;
-    background-color: #8cff20;
+    background-color: var(--button-background-primary);
     cursor: pointer;
     transition: background-color 0.2s ease;
 
-    color: #000;
+    color: var(--button-text-primary);
     font-size: 14px;
     font-weight: 600;
 }
 
 .event-detail-page button:hover {
-    background-color: #a8ff4d;
+    background-color: var(--button-background-primary-hover);
 }
 
 .event-detail-page button:disabled {
-    background-color: #f8f9fa;
+    background-color: var(--button-background-primary-disabled);
     cursor: default;
 
+    color: var(--button-text-primary-disabled);
 }
 
 @media (min-width: 768px) {

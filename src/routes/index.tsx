@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Layout from '../components/Layout';
 import PrivacyPage from '../pages/Abouts/PrivacyPage';
 import TermPage from '../pages/Abouts/TermPage';
@@ -21,12 +21,17 @@ import AccountEditPage from '../pages/Accounts/AccountEditPage';
 import PointTransactionPage from '../pages/Users/PointTransactionPage';
 import ReferralPage from '../pages/Users/ReferralPage';
 import CouponPage from '../pages/Users/CouponPage';
+import PaymentPage from '../pages/Payments/PaymentPage';
 import OrderSuccessPage from '../pages/Orders/OrderSuccessPage';
 import OrderFailPage from '../pages/Orders/OrderFailPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
+        element: <Navigate to="/home" />,
+    },
+    {
+        path: '/home',
         element: <Layout isBody={false} />,
         children: [
             { index: true, element: <HomePage /> },
@@ -177,6 +182,13 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { index: true, element: <CouponPage /> },
+        ],
+    },
+    {
+        path: '/payments',
+        element: <Layout />,
+        children: [
+            { index: true, element: <PaymentPage /> },
         ],
     },
     {

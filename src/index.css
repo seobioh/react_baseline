@@ -1,6 +1,9 @@
+@import './assets/colors/colors.css';
+
 :root {
   --font-pretendard: 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-suit: 'SUIT', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-thicccboi: 'Thicccboi', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* 폰트 크기 변수 */
   --text-xs: 0.75rem;
@@ -158,12 +161,89 @@
   font-display: swap;
 }
 
+/* THICCCBOI 폰트 등록 */
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'THICCCBOI';
+  src: url('./assets/fonts/THICCCBOI/THICCCBOI-ThicccAF.ttf') format('truetype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
 .font-pretendard {
   font-family: var(--font-pretendard);
 }
 
 .font-suit {
   font-family: var(--font-suit);
+}
+
+.font-thicccboi {
+  font-family: var(--font-thicccboi);
 }
 
 .font-thin { font-weight: 100; }
@@ -175,6 +255,7 @@
 .font-bold { font-weight: 700; }
 .font-extrabold { font-weight: 800; }
 .font-black { font-weight: 900; }
+.font-thicccaf { font-weight: 950; } /* THICCCBOI 특별 웨이트 */
 
 .text-xs { font-size: 0.75rem; }    /* 12px */
 .text-sm { font-size: 0.875rem; }   /* 14px */

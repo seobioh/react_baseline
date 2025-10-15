@@ -7,16 +7,17 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-logo-container">
-                    <img src={logoImage} alt="React Baseline Logo" className="logo" />
+                    <img src={logoImage} alt="REREV Logo" className="logo" />
                 </div>
 
                 <div className="footer-spacer"></div>
-                <p>주식회사 리액트베이스라인</p>
-                <p>사업자등록번호 | 123-45-67890</p>
-                <p>유선번호 | 010-1234-5678</p>
-                <p>대표문의 | info@reactbaseline.com</p>
-                <p>주소 | 서울특별시 강남구 테헤란로 123-123</p>
-                <p>Copyright &copy; 2024 리액트베이스라인 주식회사. All rights reserved.</p>
+                <p>리레브</p>
+                <p>대표자 | 배준연</p>
+                <p>사업자등록번호 | 507-14-40140</p>
+                <p>유선번호 | 010-4824-4562</p>
+                <p>대표문의 | info@rerev.com</p>
+                <p>주소 | 서울특별시 은평구 은평로 220, 131동 701호</p>
+                <p>Copyright &copy; 2025 리레브. All rights reserved.</p>
                 <div className="footer-spacer"></div>
 
                 <div className="footer-links">

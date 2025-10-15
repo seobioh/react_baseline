@@ -94,18 +94,18 @@
     width: 100%;
 }
 
-.detail-tile-container-category {
-    color: var(--detail-tile-category-color, #848484);
+.detail-tile-container-brand {
+    color: var(--detail-tile-brand-color, #848484);
     font-size: 12px;
 }
 
-.detail-tile-container-sub-title {
-    color: var(--detail-tile-sub-title-color, #999);
+.detail-tile-container-category {
+    color: var(--detail-tile-category-color, #999);
     font-size: 11px;
 }
 
-.detail-tile-container-title {
-    color: var(--detail-tile-title-color, #000);
+.detail-tile-container-product {
+    color: var(--detail-tile-product-color, #000);
     font-size: 16px;
 }
 
@@ -137,15 +137,15 @@
         aspect-ratio: 7/8;
     }
 
+    .detail-tile-container-brand {
+        font-size: 12px;
+    }
+    
     .detail-tile-container-category {
         font-size: 12px;
     }
     
-    .detail-tile-container-sub-title {
-        font-size: 12px;
-    }
-    
-    .detail-tile-container-title {
+    .detail-tile-container-product {
         font-size: 18px;
     }
 

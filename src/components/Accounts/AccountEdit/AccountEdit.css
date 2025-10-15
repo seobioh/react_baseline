@@ -1,3 +1,5 @@
+@import '../../../assets/colors/colors.css';
+
 .account-edit {
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
 }
 
@@ -28,7 +30,7 @@
 .account-edit-container h3 {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
     line-height: 1;
 }
@@ -36,7 +38,7 @@
 .account-edit-container p {
     margin: 0;
     
-    color: #848484;
+    color: var(--text-secondary);
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
@@ -54,7 +56,7 @@
 .account-edit-input-field label {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 12px;
     font-weight: 500;
 }
@@ -67,12 +69,12 @@
     height: 48px;
     padding: 8px 16px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     outline: none;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
 }
 
@@ -84,10 +86,10 @@
 }
 
 .account-edit-container .account-edit-input-invalid {
-    background-color: #f9f9f9;
+    background-color: var(--surface-secondary);
     cursor: not-allowed;
     
-    color: #666;
+    color: var(--text-secondary);
     font-size: 16px;
 }
 
@@ -96,8 +98,8 @@
 .account-edit-input:-webkit-autofill:focus,
 .account-edit-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
-    -webkit-text-fill-color: #000 !important;
-    background-color: white !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-color: var(--surface-primary) !important;
 }
 
 .account-edit-container select {
@@ -106,7 +108,7 @@
     padding: 8px 40px 8px 16px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
@@ -171,42 +173,40 @@
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
-    background-color: #000;
     cursor: pointer;
     transition: all 0.2s ease;
     
-    color: #fff;
     font-size: 14px;
     line-height: 1;
     font-weight: 600;
 }
 
 .account-edit button:hover:not(:disabled) {
-    background-color: #333;
+    background-color: var(--button-background-primary-hover);
 }
 
 .account-edit-button-invalid {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 .account-edit-button-valid {
-    background-color: #8cff20 !important;
+    background-color: var(--button-background-primary);
 
-    color: #000 !important;
+    color: var(--button-text-primary);
 }
 
 .account-edit-button-valid:hover:not(:disabled) {
-    background-color: #a8ff4d !important;
+    background-color: var(--button-background-primary-hover);
 }
 
 .account-edit button:disabled {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 @media (min-width: 768px) {

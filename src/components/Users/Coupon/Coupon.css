@@ -1,3 +1,5 @@
+@import "../../../assets/colors/colors.css";
+
 .coupon {
     display: flex;
     flex-direction: column;
@@ -15,7 +17,7 @@
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
 }
 
@@ -30,7 +32,7 @@
 .coupon-container h3 {
     margin: 0;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
     line-height: 1;
 }
@@ -38,7 +40,7 @@
 .coupon-container p {
     margin: 0;
 
-    color: #848484;
+    color: var(--text-tertiary);
     font-size: 12px;
     line-height: 1;
     font-weight: 400;
@@ -49,7 +51,7 @@
 
     height: 1px;
     width: 90%;
-    background-color: #d9d9d9;
+    background-color: var(--border-primary);
 }
 
 .coupon-container input {
@@ -61,20 +63,13 @@
     padding: 8px 16px;
     margin: 4px 0;
     box-sizing: border-box;
-    border: 0.2px solid #c2c2c2;
+    border: 0.2px solid var(--border-primary);
     border-radius: 4px;
     background-color: transparent;
     outline: none;
 
-    color: #000;
+    color: var(--text-primary);
     font-size: 16px;
-}
-
-.coupon-input-valid {
-    background-color: #f9f9f9;
-    cursor: not-allowed;
-
-    color: #666;
 }
 
 .coupon-input:-webkit-autofill,
@@ -93,33 +88,33 @@
     box-sizing: border-box;
     border: none;
     border-radius: 4px;
-    background-color: #000;
+    background-color: var(--button-background-primary);
 
-    color: #fff;
+    color: var(--button-text-primary);
     font-size: 14px;
     line-height: 1;
     font-weight: 600;
 }
 
 .coupon-button.invalid {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 
-    color: #fff;
+    color: var(--button-text-primary-disabled);
 }
 
 .coupon-button.valid {
-    background-color: #000;
+    background-color: var(--button-background-primary);
     
-    color: #fff;
+    color: var(--button-text-primary);
 }
 
 .coupon-button.valid:hover:not(:disabled) {
-    background-color: #333;
+    background-color: var(--button-background-primary-hover);
 }
 
 .coupon-button:disabled {
-    background-color: #c2c2c2;
+    background-color: var(--button-background-primary-disabled);
     cursor: not-allowed;
 }
 
