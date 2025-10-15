@@ -60,7 +60,7 @@
 .sign-up-progress-step.active {
     background-color: var(--toggle-button-background-primary);
 
-    color: var(--toggle-button-text-primary-active);
+    color: var(--toggle-button-text-primary);
 }
 
 .sign-up-progress-step.inactive {

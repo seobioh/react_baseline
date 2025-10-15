@@ -23,13 +23,25 @@
   --accent-green-hover: #4a9a00;
   --accent-green-active: #3d7d00;
 
+  /* Surface Colors - 배경/표면 컬러 */
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F2F4F6;
+  --surface-secondary-hover: #f1f3f4;
+  --surface-tertiary: #F8F9FA;
+  --surface-tertiary-hover: #f1f3f4;
+  --surface-elevated: #ffffff;
+  --surface-highlight: #4880EE;
+  --surface-invert: #000000;
+  --surface-invert-hover: #333333;
+  --surface-disabled: #C2C2C2;
+
   /* Header Colors - 헤더 컬러 */
   --header-background-mobile: #FFFFFF;
   --header-background-desktop: #FFFFFF;
   --header-text-active-mobile: #000000;
-  --header-text-inactive-mobile: #8484848;
+  --header-text-inactive-mobile: #8E8E93;
   --header-text-active-desktop: #000000;
-  --header-text-inactive-desktop: #8484848;
+  --header-text-inactive-desktop: #8E8E93;
 
   /* Button Colors - 버튼 컬러 */
   --button-background-primary: #000000;
@@ -46,26 +58,22 @@
   --button-text-secondary: #FFFFFF;
   --button-text-secondary-disabled: #FFFFFF;
 
-  /* Footer Colors - 푸터 컬러 */
-  --footer-background-primary: #F2F4F6;
-  --footer-text-primary: #848484;
+  --toggle-background-primary: #F9F9F9;
+  --toggle-button-background-primary: #000000;
+  --toggle-button-background-primary-inactive: #F9F9F9;
+  --toggle-button-text-primary: #FFFFFF;
+  --toggle-button-text-primary-inactive: #000000;
 
-  /* Surface Colors - 배경/표면 컬러 */
-  --surface-primary: #FFFFFF;
-  --surface-secondary: #F2F4F6;
-  --surface-secondary-hover: #f1f3f4;
-  --surface-tertiary: #F8F9FA;
-  --surface-tertiary-hover: #f1f3f4;
-  --surface-elevated: #ffffff;
-  --surface-highlight: #4880EE;
-  --surface-invert: #000000;
-  --surface-invert-hover: #333333;
-  --surface-disabled: #C2C2C2;
-  
+  --checkbox-border-primary: #DDD;
+  --checkbox-background-primary: #000000;
+  --checkbox-background-primary-disabled: #F9F9F9;
+  --checkbox-text-primary: #FFFFFF;
+  --checkbox-text-primary-disabled: #FFFFFF;
+
   /* Text Colors - 텍스트 컬러 */
   --text-primary: #000000;
   --text-secondary: #4A5565;
-  --text-tertiary: #B0B8C1;
+  --text-tertiary: #848484;
   --text-highlight: #4880EE;
   --text-invert: #FFFFFF;
   --text-disabled: #FFFFFF;
@@ -91,6 +99,7 @@
 
 /* Dark Theme */
 [data-theme="dark"] {
+  /* Brand Colors - 브랜드 메인 컬러 */
   /* Brand Colors - 브랜드 메인 컬러 */
   --brand-primary: #4880EE;
   --brand-primary-hover: #3A6BD4;
@@ -152,8 +161,7 @@
   --toggle-background-primary: #F9F9F9;
   --toggle-button-background-primary: #000000;
   --toggle-button-background-primary-inactive: #F9F9F9;
-  --toggle-button-text-primary: #000000;
-  --toggle-button-text-primary-active: #000000;
+  --toggle-button-text-primary: #FFFFFF;
   --toggle-button-text-primary-inactive: #000000;
 
   --checkbox-border-primary: #DDD;
