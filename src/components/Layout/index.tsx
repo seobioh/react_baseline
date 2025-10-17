@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { usePageView } from "../../hooks/usePageView";
 import { Header } from "../Header";
 import Body from "../Body";
 import Footer from "../Footer";
@@ -10,6 +11,8 @@ interface LayoutProps {
 }
 
 function Layout({ isPadding = true , isBody = true }: LayoutProps) {
+  usePageView();
+
   return (
     <div className="layout">
       <div className="layout-container">
